@@ -1,0 +1,23 @@
+@startuml
+title ページ遷移図
+
+home : ホームページ
+login : ログインページ \nPOST ログイン
+add : GET 登録確認\nPOST 登録
+booking : GET 予約確認\nPOST 予約
+bDel : 予約削除
+bList : 予約リスト
+
+
+[*] -> home
+home --> login
+login --> login : リンク\nuName\npass
+home --> add : リンク \npId
+add --> add : リンク \npId \naName \nage \nprice
+home --> booking : リンク \npId
+booking --> booking : リンク \nuName \nbDate \ntelNum
+home --> bList : リンク \nuName
+bList --> bDel : リンク \nloginValue \nbId
+
+
+@enduml
