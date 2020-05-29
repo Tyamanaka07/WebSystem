@@ -4,7 +4,8 @@ title ページ遷移図
 topPage : トップページ
 aList : 動物一覧
 login : GET ログインページ \nPOST ログイン
-add : GET 登録確認\nPOST 登録
+add : 動物情報追加 \nGET 登録確認 \nPOST 登録
+update : 動物情報編集 \nGET 編集確認 \nPOST 更新
 booking : GET 予約確認\nPOST 予約
 bDel : 予約削除
 bList : ユーザー用予約リスト
@@ -19,11 +20,13 @@ aList --> add : リンク \n
 add --> add : リンク \ntId \npId \naName \nage \nprice
 aList --> booking : リンク \npId
 booking --> booking : リンク \nuName \nbDate \ntelNum
-aList --> bList : リンク \nuName \nloginValue
+aList --> bList : リンク \nuName
 bList --> bDel : リンク \nbId
-aList --> bManageList : リンク \nuName \nloginValue
-bManageList --> bDel : \nbId
-aList --> aList : tId \nage \nprice
+aList --> bManageList : リンク \nuName
+bManageList --> bDel : リンク \nbId
+aList --> aList : リンク \ntId \nage \nprice \nloginValue
+aList --> update : リンク \npId
+update --> update : リンク \npId \nuName \nage \nprice
 
 
 @enduml
