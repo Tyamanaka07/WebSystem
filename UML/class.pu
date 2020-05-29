@@ -1,0 +1,24 @@
+@startuml
+
+class Sales{
+	-name
+	-kingaku
+	+getName()
+	+getKingaku()
+	+getSouryou()
+	+getTotal()
+	+toString()
+}
+
+class SalesMain{
+	+main()
+}
+
+class MemberSales{
+	+getSouryou
+}
+
+SalesMain -> Sales
+Sales <|- MemberSales
+
+@enduml
