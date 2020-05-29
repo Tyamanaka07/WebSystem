@@ -15,18 +15,18 @@ bManageList : 管理者用予約リスト
 [*] --> topPage
 topPage --> aList
 topPage --> login
-login --> login : リンク\nuName\npass
+login --> login : リンク\nuId\nuName\npass
 aList --> add : リンク \n
-add --> add : リンク \ntId \npId \naName \nage \nprice
+add --> add : リンク \npId \ntId \naName \nage \nprice
 aList --> booking : リンク \npId
-booking --> booking : リンク \nuName \nbDate \ntelNum
-aList --> bList : リンク \nuName
+booking --> booking : リンク \nuId \nbDate \ntelNum
+aList --> bList : リンク \nuId
 bList --> bDel : リンク \nbId
-aList --> bManageList : リンク \nuName
+aList --> bManageList : リンク \nuId
 bManageList --> bDel : リンク \nbId
-aList --> aList : リンク \ntId \nage \nprice \nloginValue
+aList --> aList : リンク \npId \ntId \nage \nprice \nloginValue
 aList --> update : リンク \npId
-update --> update : リンク \npId \nuName \nage \nprice
+update --> update : リンク \npId \ntId \naName \nage \nprice
 
 
 @enduml
