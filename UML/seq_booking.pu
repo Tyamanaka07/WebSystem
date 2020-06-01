@@ -1,0 +1,14 @@
+@startuml
+title ペット予約
+actor ユーザー
+participant ペット一覧画面
+participant 予約確認画面
+database ペットDB
+database 予約DB
+
+ユーザー->ペット一覧画面:1.予約ボタン
+ペット一覧画面->予約確認画面:2.遷移
+予約確認画面->ペットDB:3.ペット検索
+
+
+@enduml
