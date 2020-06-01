@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @startuml
 left to right direction
 actor ユーザー
@@ -21,28 +21,5 @@ rectangle ペット紹介Sysytem{
 	(削除)     <--管理者
 
 }
-=======
-@startuml
-left to right direction
-actor ユーザー
-actor 管理者
 
-rectangle ペット紹介Sysytem{
-	ユーザー --> (閲覧)
-	ユーザー --> (検索)
-	ユーザー --> (予約)
-	ユーザー --> (予約削除)
-	ユーザー --> (ログイン・ログアウト)
-
-	(予約)     <--管理者
-	(予約削除) <--管理者
-	(閲覧)     <--管理者
-	(検索)     <--管理者
-	(追加)     <--管理者
-	(編集)     <--管理者
-	(削除)     <--管理者
-	(予約管理) <--管理者
-	(ログイン・ログアウト)<--管理者
-}
->>>>>>> branch 'master' of https://github.com/Tyamanaka07/WebSystem.git
 @enduml
