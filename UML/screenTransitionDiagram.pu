@@ -1,0 +1,35 @@
+@startuml
+title ページ遷移図
+
+topPage : トップページ
+aList : ペット一覧
+login : GET ログインページ \nPOST ログイン
+add : ペット情報追加 \nGET 登録確認 \nPOST 登録
+update : ペット情報編集 \nGET 編集確認 \nPOST 更新
+booking : GET 予約確認\nPOST 予約
+bDel : 予約削除
+bUpdate : ユーザー予約情報更新
+bList : ユーザー用予約リスト
+bManageList : 管理者用予約リスト
+
+
+[*] --> topPage
+topPage --> aList
+topPage --> login
+login --> login : リンク\nuId\nuName\npass
+aList --> add : リンク \n
+add --> add : リンク \npId \ntId \naName \nage \naSex \nprice
+aList --> booking : リンク \npId
+booking --> booking : リンク \nuId \nbDate \ntelNum
+aList --> bList : リンク \nuId
+bList --> bDel : リンク \nbId
+aList --> bManageList : リンク \nuId
+bManageList --> bDel : リンク \nbId
+aList --> aList : リンク \npId \ntId \nage \n aSex\nprice \nloginValue
+aList --> update : リンク \npId
+update --> update : リンク \npId \ntId \naName \nage \nprice
+bList --> bUpdate : リンク \nbId \nuId \nbDate \ntelNum
+bManageList --> bUpdate : リンク \nbId \nuId \nbDate \ntelNum
+
+
+@enduml
