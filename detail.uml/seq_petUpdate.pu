@@ -1,0 +1,16 @@
+@startuml
+title ペット更新
+actor ユーザー
+participant ペット一覧画面
+participant ペット更新画面
+database ペットDB
+autonumber "#"
+
+ユーザー->ペット一覧画面:更新ボタン
+ペット一覧画面->ペット更新画面:遷移
+ユーザー->ペット更新画面:ペット情報を入力
+ユーザー->ペット更新画面:確定ボタン
+ペット更新画面->ペットDB:更新
+
+
+@enduml

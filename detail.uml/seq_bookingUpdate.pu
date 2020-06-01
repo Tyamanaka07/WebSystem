@@ -1,0 +1,18 @@
+@startuml
+title 予約情報更新
+
+autonumber "#."
+
+actor ユーザー
+participant 予約一覧画面
+participant 予約更新画面
+database 予約DB
+
+ユーザー->予約一覧画面:予約一覧ボタン
+予約一覧画面->予約更新画面 : 予約更新ボタン
+予約更新画面->予約DB : 更新
+予約更新画面->予約一覧画面 : 遷移
+予約一覧画面->ユーザー : 表示
+
+
+@enduml

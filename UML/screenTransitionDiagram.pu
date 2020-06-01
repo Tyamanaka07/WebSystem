@@ -16,21 +16,21 @@ bManageList : 管理者用予約リスト
 [*] --> topPage
 topPage --> aList
 topPage --> login
-login --> login : リンク\nuId\nuName\npass
+login --> login : リンク\nuid\nuname\npass
 aList --> add : リンク \n
-add --> add : リンク \npId \ntId \naName \nage \naSex \nprice
-aList --> booking : リンク \npId
-booking --> booking : リンク \nuId \nbDate \ntelNum
-aList --> bList : リンク \nuId \npId
-bList --> bDel : リンク \nbId
-aList --> bManageList : リンク \nuId \npId
-bManageList --> bDel : リンク \nbId
-aList --> aList : リンク \npId \ntId \nage \n aSex\nprice \nloginValue
-aList --> update : リンク \npId
-update --> update : リンク \npId \ntId \naName \nage \nprice
-bList --> bUpdate : リンク \nbId \nuId \nbDate \ntelNum
-bManageList --> bUpdate : リンク \nbId \nuId \nbDate \ntelNum
-bUpdate --> bUpdate : リンク \nbId \nuId \nbDate \ntelNum
+add --> add : リンク \npid \ntid \ntname \nage \naSex \nprice
+aList --> booking : リンク \npid
+booking --> booking : リンク \nuid \nbDate \ntelNum
+aList --> bList : リンク \nuid \npid
+bList --> bDel : リンク \nbid
+aList --> bManageList : リンク \nuid \npid
+bManageList --> bDel : リンク \nbid
+aList --> aList : リンク \npid \ntid \nage \n aSex\nprice \nloginValue
+aList --> update : リンク \npid
+update --> update : リンク \npid \ntid \ntname \nage \nprice
+bList --> bUpdate : リンク \nbid \nuid \nbDate \ntelNum
+bManageList --> bUpdate : リンク \nbid \nuid \nbDate \ntelNum
+bUpdate --> bUpdate : リンク \nbid \nuid \nbDate \ntelNum
 
 
 @enduml
