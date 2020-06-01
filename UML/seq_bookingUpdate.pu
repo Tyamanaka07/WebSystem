@@ -1,16 +1,18 @@
 @startuml
 title 予約情報更新
 
-#Number
+autonumber "#."
 
 actor ユーザー
-participant ペット一覧画面
-participant 予約確認画面
-database ペットDB
+participant 予約一覧画面
+participant 予約更新画面
 database 予約DB
 
-ユーザー->ペット一覧画面:1.予約ボタン
-ペット一覧画面->予約確認画面:2.遷移
-予約確認画面->ペットDB:3.ペット検索
+ユーザー->予約一覧画面:予約一覧ボタン
+予約一覧画面->予約更新画面 : 予約更新ボタン
+予約更新画面->予約DB : 更新
+予約更新画面->予約一覧画面 : 遷移
+予約一覧画面->ユーザー : 表示
+
 
 @enduml

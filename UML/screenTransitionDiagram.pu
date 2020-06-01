@@ -21,9 +21,9 @@ aList --> add : リンク \n
 add --> add : リンク \npId \ntId \naName \nage \naSex \nprice
 aList --> booking : リンク \npId
 booking --> booking : リンク \nuId \nbDate \ntelNum
-aList --> bList : リンク \nuId
+aList --> bList : リンク \nuId \npId
 bList --> bDel : リンク \nbId
-aList --> bManageList : リンク \nuId
+aList --> bManageList : リンク \nuId \npId
 bManageList --> bDel : リンク \nbId
 aList --> aList : リンク \npId \ntId \nage \n aSex\nprice \nloginValue
 aList --> update : リンク \npId
