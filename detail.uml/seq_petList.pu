@@ -2,7 +2,7 @@
 title ペット一覧表示
 actor ユーザー
 participant PetListServlet
-participant TypeDAO
+participant PetDAO
 participant Pet
 participant Request
 participant petlist.jsp
