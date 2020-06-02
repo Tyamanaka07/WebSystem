@@ -12,9 +12,9 @@ autonumber "#."
 BookingListServlet->BookingDAO:生成()
 BookingListServlet->BookingDAO:findAll()
 BookingDAO->Booking:リストを生成
-BookingDAO->BookingListServlet:Bookingリスト
-BookingListServlet-->Request:setAttribute
-BookingListServlet-->bookinglist.jsp:フォワード
+BookingDAO-->BookingListServlet:Bookingリスト
+BookingListServlet->Request:setAttribute
+BookingListServlet->bookinglist.jsp:フォワード
 bookinglist.jsp-->ユーザー:表示
 
 @enduml
