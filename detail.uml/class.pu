@@ -3,115 +3,116 @@ left to right direction
 
 package Model{
 	class Pet{
-		-pid
-		-tid
-		-birthDate
-		-sex
-		-price
-		-description
+		-pid:int
+		-tid:int
+		-birthDate:Date
+		-sex:String
+		-price:int
+		-description:String
 	}
 
 	class Type{
-		-tid
-		-tname
+		-tid:int
+		-tname:String
 	}
 
 	class User{
-		-uid
-		-uname
-		-password
+		-uid:int
+		-uname:String
+		-password:String
 	}
 
 	class Booking{
-		-bid
-		-pid
-		-uid
-		-bookingDate
-		-telNum
+		-bid:int
+		-pid:int
+		-uid:int
+		-price:int
+		-bookingDate:Date
+		-telNum:String
 	}
 
 	class PetDAO{
 		+findAll():ArrayList<Pet>
-		+findByTid():Pet
-		+findByPid():Pet
-		+insert()
-		+update()
-		+delete()
+		+findByTid(int tid):Pet
+		+findByPid(int pid):Pet
+		+insert(Pet p)
+		+update(int pid)
+		+delete(int pid)
 	}
 
 	class TypeDAO{
 		+findAll():ArrayList<Type>
-		+findByTid():Type
-		+insert()
-		+delete()
+		+findByTid(int tid):Type
+		+insert(Type t)
+		+delete(int pid)
 	}
 
 	class UserDAO{
-		+findByUname():Booking
+		+findByUname(String uname):Booking
 	}
 
 	class BookingDAO{
 		+findAll():ArrayList<Booking>
-		+findByUid():Booking
-		+insert()
-		+delete()
+		+findByUid(int uid):Booking
+		+insert(Booking b)
+		+delete(int uid, int bid)
 	}
 }
 
 package Servlet{
 	class TopDiagramServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class PetListServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class LoginServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class PetInsertServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class PetUpdateServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class PetDeleteServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class TypeInsertServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class TypeDeleteServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class BookingCheckServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class BookingListServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 
 	class BookingDeleteServlet{
-		+get()
-		+post()
+		+doGet()
+		+doPost()
 	}
 }
 

@@ -22,21 +22,21 @@ public class TypeDAO {
 	 * @return 種類情報
 	 */
 
-	public Type findByTid() {
+	public Type findByTid(int tid) {
 
 	}
 
 	/**
 	 * ペット種類の追加
 	 */
-	public void insert() {
+	public void insert(Type t) {
 
 	}
 
 	/**
 	 * ペット種類の削除
 	 */
-	public void delete() {
+	public void delete(int tid) {
 
 	}
 }

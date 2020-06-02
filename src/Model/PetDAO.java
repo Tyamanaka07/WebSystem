@@ -23,7 +23,7 @@ public class PetDAO {
 	 * 種類別のデータを取得する
 	 * @return Pet型の変数を返す
 	 */
-	public Pet findByTid() {
+	public Pet findByTid(int tid) {
 
 	}
 
@@ -31,28 +31,28 @@ public class PetDAO {
 	 * ペット別のデータを取得する
 	 * @return Pet型の変数を返す
 	 */
-	public Pet findByPid() {
+	public Pet findByPid(int pid) {
 
 	}
 
 	/**
 	 * 新しいペットの情報の追加を行う
 	 */
-	public void insert() {
+	public void insert(Pet p) {
 
 	}
 
 	/**
 	 * 既存のペットの情報の更新を行う
 	 */
-	public void update() {
+	public void update(int pid) {
 
 	}
 
 	/**
 	 * 既存のペットの情報の削除を行う
 	 */
-	public void delete() {
+	public void delete(int pid) {
 
 	}
 }
