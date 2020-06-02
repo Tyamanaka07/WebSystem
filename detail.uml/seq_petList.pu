@@ -1,16 +1,21 @@
 @startuml
 title ペット一覧表示
 actor ユーザー
-participant トップ画面
-participant ペット一覧画面
-database ペットDB
+participant TopDiagramServlet
+participant TypeDAO
+participant Pet
+participant Request
+participant petlist.jsp
 autonumber "#"
 
-ユーザー->トップ画面:ペット一覧ボタン
-トップ画面->ペット一覧画面:遷移
-ペット一覧画面->ペットDB:検索
-ペットDB->ペット:生成
-ペットDB-->ペット一覧画面:ペット一覧
-ペット一覧画面-->ユーザー:表示
+ユーザー->TopDiagramServlet:GETリクエスト
+TopDiagramServlet->TypeDAO**:生成()
+TopDiagramServlet->TypeDAO++:findByTid()
+TypeDAO->Pet**:リストを生成
+TypeDAO-->TopDiagramServlet--:Petリスト
+TopDiagramServlet->Request++:setAttribute
+Request--
+TopDiagramServlet->petlist.jsp:フォワード
+petlist.jsp-->ユーザー:表示
 
 @enduml
