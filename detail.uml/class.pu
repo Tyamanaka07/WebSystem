@@ -51,7 +51,6 @@ package Model{
 		+findByUname()
 	}
 
-
 	class BookingDAO{
 		+findAll()
 		+findByUid()
