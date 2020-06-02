@@ -1,7 +1,7 @@
 @startuml
 title ページ遷移図
 
-topPage : トップページ
+topPageDate : トップページ
 aList : ペット一覧
 login : GET ログインページ \nPOST ログイン
 add : ペット情報追加 \nGET 登録確認 \nPOST 登録
@@ -18,19 +18,19 @@ topPage --> aList
 topPage --> login
 login --> login : リンク\nuid\nuname\npass
 aList --> add : リンク \n
-add --> add : リンク \npid \ntid \ntname \nage \naSex \nprice
+add --> add : リンク \npid \ntid \ntname \nbirthDate \naSex \nprice
 aList --> booking : リンク \npid
-booking --> booking : リンク \nuid \nbDate \ntelNum
+booking --> booking : リンク \nuid \nbookingDate \ntelNum
 aList --> bList : リンク \nuid \npid
 bList --> bDel : リンク \nbid
 aList --> bManageList : リンク \nuid \npid
 bManageList --> bDel : リンク \nbid
-aList --> aList : リンク \npid \ntid \nage \n aSex\nprice \nloginValue
+aList --> aList : リンク \npid \ntid \nbirthDate \n aSex\nprice \nloginValue
 aList --> update : リンク \npid
-update --> update : リンク \npid \ntid \ntname \nage \nprice
-bList --> bUpdate : リンク \nbid \nuid \nbDate \ntelNum
-bManageList --> bUpdate : リンク \nbid \nuid \nbDate \ntelNum
-bUpdate --> bUpdate : リンク \nbid \nuid \nbDate \ntelNum
+update --> update : リンク \npid \ntid \ntname \nbirthDate \nprice
+bList --> bUpdate : リンク \nbid \nuid \nbookingDate \ntelNum
+bManageList --> bUpdate : リンク \nbid \nuid \nbookingDate \ntelNum
+bUpdate --> bUpdate : リンク \nbid \nuid \nbookingDate \ntelNum
 
 
 @enduml
