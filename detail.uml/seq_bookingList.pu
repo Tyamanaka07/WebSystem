@@ -10,7 +10,7 @@ autonumber "#."
 
 ユーザー->BookingListServlet:GETリクエスト
 BookingListServlet->BookingDAO:生成()
-BookingListServlet->BookingDAO:findAll()
+BookingListServlet->BookingDAO:findByUid()
 BookingDAO->Booking:リストを生成
 BookingDAO-->BookingListServlet:Bookingリスト
 BookingListServlet->Request:setAttribute
