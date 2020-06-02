@@ -48,7 +48,7 @@ class 種類DB{
 }
 
 class ユーザーDB{
-	+ログイン()
+	+ユーザー名で検索()
 }
 
 class 予約DB{
