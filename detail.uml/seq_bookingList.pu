@@ -2,9 +2,10 @@
 title 予約一覧表示
 actor ユーザー
 participant BookingListServlet
+participant BookingDAO
 participant bookinglist.jsp
 participant Request
-participant BookingDAO
+
 autonumber "#."
 
 ユーザー->BookingListServlet:GETリクエスト
