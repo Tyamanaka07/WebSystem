@@ -6,7 +6,7 @@ participant TypeDAO
 participant Pet
 participant Request
 participant petlist.jsp
-autonumber "#"
+autonumber "#."
 
 ユーザー->TopDiagramServlet:GETリクエスト
 TopDiagramServlet->TypeDAO**:生成()
