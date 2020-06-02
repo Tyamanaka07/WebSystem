@@ -2,94 +2,135 @@
 left to right direction
 
 package Model{
-class Pet{
-	-pid
-	-tid
-	-age
-	-sex
-	-price
-	-description
-}
+	class Pet{
+		-pid
+		-tid
+		-birthDate
+		-sex
+		-price
+		-description
+	}
 
-class Type{
-	-tid
-	-tname
-}
+	class Type{
+		-tid
+		-tname
+	}
 
-class User{
-	-uid
-	-uname
-	-password
-}
+	class User{
+		-uid
+		-uname
+		-password
+	}
 
-class Booking{
-	-bid
-	-pid
-	-price
-	-bookingDate
-	-telNum
-}
+	class Booking{
+		-bid
+		-pid
+		-uid
+		-price
+		-bookingDate
+		-telNum
+	}
 
-class PetDAO{
-	+findAll()
-	+findByTid()
-	+findByPid()
-	+insert()
-	+update()
-	+delete()
-}
+	class PetDAO{
+		+findAll()
+		+findByTid()
+		+findByPid()
+		+insert()
+		+update()
+		+delete()
+	}
 
-class TypeDAO{
-	+findAll()
-	+findByTid()
-	+insert()
-	+delete()
-}
+	class TypeDAO{
+		+findAll()
+		+findByTid()
+		+insert()
+		+delete()
+	}
 
-class UserDAO{
-	+login()
-}
+	class UserDAO{
+		+login()
+	}
 
-class BookindDAO{
-	+findAll()
-	+findByUid()
-	+insert()
-	+delete()
-}
+	class BookingDAO{
+		+findAll()
+		+findByUid()
+		+insert()
+		+delete()
+	}
 }
 
 package Servlet{
-class トップ画面
-class ペット一覧画面
-class ログイン画面
-class ペット追加画面
-class ペット更新画面
-class ペット削除画面
-class 種類追加画面
-class 種類削除画面
-class 予約確認画面
-class 予約一覧画面
-class 予約削除画面
+	class TopScreenServlet{
+		+get()
+		+post()
+	}
 
+	class PetListServlet{
+		+get()
+		+post()
+	}
+
+	class LoginServlet{
+		+get()
+		+post()
+	}
+
+	class PetInsertServlet{
+		+get()
+		+post()
+	}
+
+	class PetUpdateServlet{
+		+get()
+		+post()
+	}
+
+	class PetDeleteServlet{
+		+get()
+		+post()
+	}
+
+	class TypeInsertServlet{
+		+get()
+		+post()
+	}
+
+	class TypeDeleteServlet{
+		+get()
+		+post()
+	}
+
+	class BookingCheckServlet{
+		+get()
+		+post()
+	}
+
+	class BookingListServlet{
+		+get()
+		+post()
+	}
+
+	class BookingDeleteServlet{
+		+get()
+		+post()
+	}
 }
 
-ペットDB "1" *-- ペット
-種類DB "1" *-- 種類
-ユーザーDB "1" *-- ユーザー
-予約DB "1" *-- 予約
-ペット -> 種類
-ペット -> 予約
 
-ペット一覧画面-->種類DB
-ペット一覧画面-->ペットDB
-ログイン画面-->ユーザーDB
-ペット追加画面-->ペットDB
-ペット更新画面-->ペットDB
-種類追加画面-->種類DB
-種類削除画面-->種類DB
-ペット削除画面-->ペットDB
-予約確認画面-->予約DB
-予約一覧画面-->予約DB
-予約削除画面-->予約DB
+PetListServlet..>TypeDAO
+TypeInsertServlet..>TypeDAO
+TypeDeleteServlet..>TypeDAO
+PetListServlet..>PetDAO
+PetInsertServlet..>PetDAO
+PetUpdateServlet..>PetDAO
+PetDeleteServlet..>PetDAO
+LoginServlet..>UserDAO
+BookingCheckServlet..>BookingDAO
+BookingListServlet..>BookingDAO
+BookingDeleteServlet..>BookingDAO
 
+BookingDAO..>Booking
+PetDAO..>Pet
+TypeDAO..>Type
+UserDAO..>User
 @enduml
