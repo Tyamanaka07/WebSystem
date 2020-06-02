@@ -10,7 +10,7 @@ autonumber "#"
 
 ユーザー->TopDiagramServlet:GETリクエスト
 TopDiagramServlet->TypeDAO**:生成()
-TopDiagramServlet->TypeDAO++:findAll()
+TopDiagramServlet->TypeDAO++:findByTid()
 TypeDAO->Pet**:リストを生成
 TypeDAO-->TopDiagramServlet--:Petリスト
 TopDiagramServlet->Request++:setAttribute
