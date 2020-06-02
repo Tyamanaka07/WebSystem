@@ -26,7 +26,6 @@ package Model{
 		-bid
 		-pid
 		-uid
-		-price
 		-bookingDate
 		-telNum
 	}
