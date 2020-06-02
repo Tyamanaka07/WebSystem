@@ -60,7 +60,7 @@ package Model{
 }
 
 package Servlet{
-	class TopScreenServlet{
+	class TopDiagramServlet{
 		+get()
 		+post()
 	}
