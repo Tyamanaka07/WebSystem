@@ -10,7 +10,10 @@ participant BookingList.jsp
 autonumber "#."
 
 ユーザー->PetListServlet : ペット一覧ボタン
-PetListServlet->BookingCheckServlet : GET()
+PetListServlet->PetList.jsp : フォワード
+PetList.jsp->ユーザー : 表示
+ユーザー->PetList.jsp : ペット予約ボタン
+PetList.jsp ->BookingCheckServlet : GET()
 BookingCheckServlet->Booking.jsp : フォワード
 Booking.jsp->BookingCheckServlet : POST()
 BookingCheckServlet->BookingDAO : 生成()
