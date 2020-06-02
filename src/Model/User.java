@@ -1,8 +1,19 @@
 package Model;
 
 public class User {
+	/**
+	 * ユーザーID
+	 */
 	private int uid;
+
+	/**
+	 * ユーザー名
+	 */
 	private String uname;
+
+	/**
+	 * パスワード
+	 */
 	private String password;
 
 
