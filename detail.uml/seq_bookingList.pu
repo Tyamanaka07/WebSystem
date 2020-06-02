@@ -4,7 +4,7 @@ actor ユーザー
 participant BookingListServlet
 participant bookinglist.jsp
 participant Request
-database BookingDAO
+participant BookingDAO
 autonumber "#."
 
 ユーザー->BookingListServlet:GETリクエスト
