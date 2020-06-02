@@ -22,7 +22,7 @@ public class TypeDAO {
 	 * @return 種類情報
 	 */
 
-	public ArrayList<Type> findByTid() {
+	public Type findByTid() {
 
 	}
 

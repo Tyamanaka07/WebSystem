@@ -32,28 +32,28 @@ package Model{
 	}
 
 	class PetDAO{
-		+findAll()
-		+findByTid()
-		+findByPid()
+		+findAll():ArrayList<Pet>
+		+findByTid():Pet
+		+findByPid():Pet
 		+insert()
 		+update()
 		+delete()
 	}
 
 	class TypeDAO{
-		+findAll()
-		+findByTid()
+		+findAll():ArrayList<Type>
+		+findByTid():Type
 		+insert()
 		+delete()
 	}
 
 	class UserDAO{
-		+findByUname()
+		+findByUname():Booking
 	}
 
 	class BookingDAO{
-		+findAll()
-		+findByUid()
+		+findAll():ArrayList<Booking>
+		+findByUid():Booking
 		+insert()
 		+delete()
 	}
