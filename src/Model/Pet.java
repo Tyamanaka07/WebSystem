@@ -1,6 +1,6 @@
 package Model;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 /**
  * ペットの構成
@@ -8,11 +8,35 @@ import java.sql.Timestamp;
  *
  */
 public class Pet {
+
+	/**
+	 * ペットID
+	 */
 	private int pid;
+
+	/**
+	 * 種類ID
+	 */
 	private int tid;
-	private Timestamp birthDate;
+
+	/**
+	 * ペットの誕生日
+	 */
+	private Date birthDate;
+
+	/**
+	 * ペットの性別
+	 */
 	private String sex;
+
+	/**
+	 * ペットの値段
+	 */
 	private int price;
+
+	/**
+	 * ペットの説明
+	 */
 	private String description;
 
 
@@ -25,7 +49,7 @@ public class Pet {
 	 * @param price ペットの値段
 	 * @param description ペットの説明
 	 */
-	public Pet(int pid, int tid, Timestamp birthDate, String sex, int price, String description) {
+	public Pet(int pid, int tid, Date birthDate, String sex, int price, String description) {
 		super();
 		this.pid = pid;
 		this.tid = tid;
@@ -72,7 +96,7 @@ public class Pet {
 	 * ペットの誕生日のgetter
 	 * @return ペットの誕生日
 	 */
-	public Timestamp getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
@@ -80,7 +104,7 @@ public class Pet {
 	 * ペットの誕生日のsetter
 	 * @param birthDate ペットの誕生日
 	 */
-	public void setBirthDate(Timestamp birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 

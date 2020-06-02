@@ -8,11 +8,35 @@ import java.sql.Timestamp;
  *
  */
 public class Booking {
+
+	/**
+	 * 予約ID
+	 */
 	private int bid;
+
+	/**
+	 * ペットID
+	 */
 	private int pid;
+
+	/**
+	 * ユーザーID
+	 */
 	private int uid;
+
+	/**
+	 * パスワード
+	 */
 	private int price;
+
+	/**
+	 * 予約した日時
+	 */
 	private Timestamp bookingDate;
+
+	/**
+	 * ユーザーの電話番号
+	 */
 	private int telNum;
 
 
