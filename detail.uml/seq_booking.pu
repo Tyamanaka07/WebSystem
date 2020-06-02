@@ -3,12 +3,21 @@ title ペット予約
 actor ユーザー
 participant PetListServlet
 participant BookingCheckServlet
-autonumber "#"
+participant Booking.jsp
+participant BookingDAO
+participant PetList.jsp
+participant BookingList.jsp
+autonumber "#."
 
+ユーザー->PetListServlet : ペット一覧ボタン
 PetListServlet->BookingCheckServlet : GET()
+BookingCheckServlet->Booking.jsp : フォワード
+Booking.jsp->BookingCheckServlet : POST()
 BookingCheckServlet->BookingDAO : 生成()
 BookingCheckServlet->BookingDAO : insert()
-BookingCheckServlet->request : setAttribute(Booking)
+BookingCheckServlet->PetListServlet : GET()
+PetListServlet->PetList.jsp : フォワード
+PetList.jsp->ユーザー : 表示
 BookingCheckServlet->BookingList.jsp : フォワード
 BookingList.jsp->ユーザー : 表示
 
