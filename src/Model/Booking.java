@@ -37,7 +37,7 @@ public class Booking {
 	/**
 	 * ユーザーの電話番号
 	 */
-	private int telNum;
+	private String telNum;
 
 
 	/**
@@ -124,7 +124,7 @@ public class Booking {
 	 * ユーザーの電話番号のgetter
 	 * @return ユーザーの電話番号
 	 */
-	public int getTelNum() {
+	public String getTelNum() {
 		return telNum;
 	}
 
@@ -132,7 +132,7 @@ public class Booking {
 	 * ユーザーの電話番号のsetter
 	 * @param telNum ユーザーの電話番号
 	 */
-	public void setTelNum(int telNum) {
+	public void setTelNum(String telNum) {
 		this.telNum = telNum;
 	}
 
@@ -146,7 +146,7 @@ public class Booking {
 	 * @param bookingDate 予約した日時
 	 * @param telNum ユーザーの電話番号
 	 */
-	public Booking(int bid, int pid, int uid, int price, Timestamp bookingDate, int telNum) {
+	public Booking(int bid, int pid, int uid, int price, Timestamp bookingDate, String telNum) {
 		super();
 		this.bid = bid;
 		this.pid = pid;

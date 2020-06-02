@@ -9,20 +9,20 @@ participant PetList.jsp
 participant BookingList.jsp
 autonumber "#."
 
-ユーザー->PetListServlet : ペット一覧ボタン
-PetListServlet->PetList.jsp : フォワード
-PetList.jsp->ユーザー : 表示
-ユーザー->PetList.jsp : ペット予約ボタン
-PetList.jsp ->BookingCheckServlet : GET()
+
+ユーザー->BookingCheckServlet : GET()
+BookingCheckServlet->PetDAO : 生成()
+BookingCheckServlet->PetDAO : findByPid()
+PetDAO->BookingCheckServlet : Pet
 BookingCheckServlet->Booking.jsp : フォワード
+Booking.jsp->ユーザー : 確認
+ユーザー->Booking.jsp : リアクション
 Booking.jsp->BookingCheckServlet : POST()
 BookingCheckServlet->BookingDAO : 生成()
 BookingCheckServlet->BookingDAO : insert()
-BookingCheckServlet->PetListServlet : GET()
-PetListServlet->PetList.jsp : フォワード
+BookingCheckServlet->PetList.jsp : フォワード
 PetList.jsp->ユーザー : 表示
-BookingCheckServlet->BookingList.jsp : フォワード
-BookingList.jsp->ユーザー : 表示
+
 
 
 @enduml
