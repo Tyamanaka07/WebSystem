@@ -55,7 +55,7 @@ package Model{
 		+findAll():ArrayList<Booking>
 		+findByUid(int uid):Booking
 		+insert(Booking b)
-		+delete(int uid, int bid)
+		+delete(int bid)
 	}
 }
 
