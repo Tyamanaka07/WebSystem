@@ -27,7 +27,7 @@ package Model{
 		-pid:int
 		-uid:int
 		-price:int
-		-bookingDate:Timtstamp
+		-bookingDate:Timestamp
 		-telNum:String
 	}
 
