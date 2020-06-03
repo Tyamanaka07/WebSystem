@@ -14,14 +14,14 @@ BookingCheckServlet->PetDAO : 生成()
 BookingCheckServlet->PetDAO : findByPid()
 PetDAO-->BookingCheckServlet : Pet
 BookingCheckServlet->Booking.jsp : フォワード
-Booking.jsp->ユーザー : 予約フォーム
+Booking.jsp-->ユーザー : 予約フォーム
 ユーザー->Booking.jsp : 入力
-Booking.jsp->BookingCheckServlet : POST()
+Booking.jsp-->BookingCheckServlet : POST()
 BookingCheckServlet->BookingDAO : 生成()
 BookingCheckServlet->Booking:生成()
 BookingCheckServlet->BookingDAO : insert()
 BookingCheckServlet->bookingList : リダイレクト
-bookingList->ユーザー : 表示
+bookingList-->ユーザー : 表示
 
 
 
