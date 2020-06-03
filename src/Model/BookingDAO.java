@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 /**
@@ -36,11 +37,12 @@ public class BookingDAO {
 			while (rs.next()) {
 				int bid = rs.getInt("bid");
 				int pid = rs.getInt("pid");
-				String name = rs.getString("name");
-				String adr = rs.getString("adr");
+				int uid = rs.getInt("uid");
+				Timestamp bookingDate = rs.getTimestamp("bookingDate");
+				String telNum = rs.getString("telNum");
 
-				Booking m = new Booking(mid, name, adr);
-				list.add(m);
+				Booking b = new Booking(bid, pid, uid, bookingDate, telNum);
+				list.add(b);
 
 			}
 			rs.close();
@@ -57,14 +59,14 @@ public class BookingDAO {
 	 * @return 予約情報
 	 */
 	public Booking findByUid(int uid) {
-		Booking m = null;
+		Booking b = null;
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SElECT * FROM Booking WHERE mid = ?";
+			String sql = "SElECT * FROM booking WHERE uid = ?";
 
 			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setInt(1, mid);
+			stmt.setInt(1, uid);
 
 			ResultSet rs = stmt.executeQuery();
 
