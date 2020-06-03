@@ -5,7 +5,7 @@ participant BookingCheckServlet
 participant Booking.jsp
 participant BookingDAO
 participant Booking
-participant BookingList.jsp
+participant bookingList
 autonumber "#."
 
 
@@ -14,14 +14,14 @@ BookingCheckServlet->PetDAO : 生成()
 BookingCheckServlet->PetDAO : findByPid()
 PetDAO-->BookingCheckServlet : Pet
 BookingCheckServlet->Booking.jsp : フォワード
-Booking.jsp->ユーザー : 確認
-ユーザー->Booking.jsp : 確認ボタン押下
-Booking.jsp->BookingCheckServlet : POST()
+Booking.jsp-->ユーザー : 予約フォーム
+ユーザー->Booking.jsp : 入力
+Booking.jsp-->BookingCheckServlet : POST()
 BookingCheckServlet->BookingDAO : 生成()
 BookingCheckServlet->Booking:生成()
 BookingCheckServlet->BookingDAO : insert()
-BookingCheckServlet->BookingList.jsp : フォワード
-BookingList.jsp->ユーザー : 表示
+BookingCheckServlet->bookingList : リダイレクト
+bookingList-->ユーザー : 表示
 
 
 
