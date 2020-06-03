@@ -20,10 +20,10 @@ public class PetDAO {
 	}
 
 	/**
-	 * 種類別のデータを取得する
-	 * @return Pet型の変数を返す
+	 * データベース内のデータを取得する
+	 * @return ArrayList<Pet>型の変数を返す
 	 */
-	public Pet findByTid(int tid) {
+	public ArrayList<Pet> findByTid() {
 
 	}
 
