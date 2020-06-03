@@ -11,15 +11,25 @@
 	<header>
 		<div class="top">
 			<ul>
-				<li><a href="#">予約一覧</a></li>
-				<li><a href="#">ログイン</a></li>
+				<li><a href="bookinglist.html">予約一覧</a></li>
+				<li><a href="login.html">ログアウト</a></li>
 			</ul>
-			<h1><a href="index.html">welcome</a></h1>
+			<h1><a href="top.html">Nakagawa's</a></h1>
 		</div>
 	</header>
 
-	<main>
-
+	<main class="sub">
+		<form class="logininput" action="insert" method="post">
+			新ペット：
+			<input type="date" max="2020-06-03" />生まれ　/　
+			<span class="radio">
+			♂<input type="radio" name="gender" value="0" checked>
+			♀<input type="radio" name="gender" value="1">
+			</span>
+			　/　値段：￥<input type="number" name="price">
+			<br>
+			<input class="loginbtn" type="submit" value="追加">
+		</form>
 	</main>
 
 </body>
