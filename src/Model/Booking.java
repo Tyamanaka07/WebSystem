@@ -25,11 +25,6 @@ public class Booking {
 	private int uid;
 
 	/**
-	 * パスワード
-	 */
-	private String password;
-
-	/**
 	 * 予約した日時
 	 */
 	private Timestamp bookingDate;
@@ -89,22 +84,6 @@ public class Booking {
 	}
 
 	/**
-	 * ペットの値段のgetter
-	 * @return ペットの値段
-	 */
-	public String getPrice() {
-		return password;
-	}
-
-	/**
-	 * ペットの値段のsetter
-	 * @param password ペットの値段
-	 */
-	public void setPrice(String password) {
-		this.password = password;
-	}
-
-	/**
 	 * 予約した日時のgetter
 	 * @return 予約した日時
 	 */
@@ -142,16 +121,14 @@ public class Booking {
 	 * @param bid 予約ID
 	 * @param pid ペットID
 	 * @param uid ユーザーID
-	 * @param password ペットの値段
 	 * @param bookingDate 予約した日時
 	 * @param telNum ユーザーの電話番号
 	 */
-	public Booking(int bid, int pid, int uid, String password, Timestamp bookingDate, String telNum) {
+	public Booking(int bid, int pid, int uid,  Timestamp bookingDate, String telNum) {
 		super();
 		this.bid = bid;
 		this.pid = pid;
 		this.uid = uid;
-		this.password = password;
 		this.bookingDate = bookingDate;
 		this.telNum = telNum;
 	}
