@@ -1,27 +1,27 @@
 @startuml
 title ペット予約
 actor ユーザー
-participant PetListServlet
 participant BookingCheckServlet
 participant Booking.jsp
 participant BookingDAO
-participant PetList.jsp
+participant Booking
 participant BookingList.jsp
 autonumber "#."
 
 
-ユーザー->BookingCheckServlet : GET()
+ユーザー->BookingCheckServlet : 予約ボタン押下
 BookingCheckServlet->PetDAO : 生成()
 BookingCheckServlet->PetDAO : findByPid()
-PetDAO->BookingCheckServlet : Pet
+PetDAO-->BookingCheckServlet : Pet
 BookingCheckServlet->Booking.jsp : フォワード
 Booking.jsp->ユーザー : 確認
-ユーザー->Booking.jsp : リアクション
+ユーザー->Booking.jsp : 確認ボタン押下
 Booking.jsp->BookingCheckServlet : POST()
 BookingCheckServlet->BookingDAO : 生成()
+BookingCheckServlet->Booking:生成()
 BookingCheckServlet->BookingDAO : insert()
-BookingCheckServlet->PetList.jsp : フォワード
-PetList.jsp->ユーザー : 表示
+BookingCheckServlet->BookingList.jsp : フォワード
+BookingList.jsp->ユーザー : 表示
 
 
 
