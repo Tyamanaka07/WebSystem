@@ -26,7 +26,6 @@ package Model{
 		-bid:int
 		-pid:int
 		-uid:int
-		-password:String
 		-bookingDate:Timestamp
 		-telNum:String
 	}
