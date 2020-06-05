@@ -177,10 +177,10 @@ public class PetDAO {
 	public void delete(int pid) {
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
-			String sql = "DELETE FROM shouhin WHERE sid = ?;";
+			String sql = "DELETE FROM m_pet WHERE pid = ?;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
-			stmt.setInt(1, sid);
+			stmt.setInt(1, pid);
 
 			stmt.executeUpdate();
 
