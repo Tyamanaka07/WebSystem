@@ -27,6 +27,7 @@ package Model{
 		-pid:int
 		-tid:int
 		-uid:int
+		-tid:int
 		-bookingDate:Timestamp
 		-telNum:String
 	}
