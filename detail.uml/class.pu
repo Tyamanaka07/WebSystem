@@ -25,6 +25,7 @@ package Model{
 	class Booking{
 		-bid:int
 		-pid:int
+		-tid:int
 		-uid:int
 		-bookingDate:Timestamp
 		-telNum:String

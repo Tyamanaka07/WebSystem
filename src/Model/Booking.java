@@ -20,6 +20,11 @@ public class Booking {
 	private int pid;
 
 	/**
+	 * 種類ID
+	 */
+	private int tid;
+
+	/**
 	 * ユーザーID
 	 */
 	private int uid;
@@ -65,6 +70,22 @@ public class Booking {
 	 */
 	public void setPid(int pid) {
 		this.pid = pid;
+	}
+
+	/**
+	 * ペットIDのgetter
+	 * @return ペットID
+	 */
+	public int getTid() {
+		return tid;
+	}
+
+	/**
+	 * ペットIDのsetter
+	 * @param pid ペットID
+	 */
+	public void setTid(int tid) {
+		this.tid = tid;
 	}
 
 	/**
@@ -120,14 +141,16 @@ public class Booking {
 	 *コンストラクター
 	 * @param bid 予約ID
 	 * @param pid ペットID
+	 * @param tid 種類ID
 	 * @param uid ユーザーID
 	 * @param bookingDate 予約した日時
 	 * @param telNum ユーザーの電話番号
 	 */
-	public Booking(int bid, int pid, int uid,  Timestamp bookingDate, String telNum) {
+	public Booking(int bid, int pid, int tid, int uid,  Timestamp bookingDate, String telNum) {
 		super();
 		this.bid = bid;
 		this.pid = pid;
+		this.tid = tid;
 		this.uid = uid;
 		this.bookingDate = bookingDate;
 		this.telNum = telNum;

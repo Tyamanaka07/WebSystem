@@ -37,11 +37,12 @@ public class BookingDAO {
 			while (rs.next()) {
 				int bid = rs.getInt("bid");
 				int pid = rs.getInt("pid");
+				int tid = rs.getInt("tid");
 				int uid = rs.getInt("uid");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
 
-				Booking b = new Booking(bid, pid, uid, bookingDate, telNum);
+				Booking b = new Booking(bid, pid, tid, uid, bookingDate, telNum);
 				list.add(b);
 
 			}
