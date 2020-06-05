@@ -255,7 +255,7 @@ nav a:hover {
 	margin-top: 20px;
 }
 
-.logininput input[type='text'] {
+.logininput input[type='text'],.logininput input[type='password'],.logininput input[type='number'] {
 	box-sizing: border-box;
 	letter-spacing: 1px;
 	color: black;
@@ -266,37 +266,7 @@ nav a:hover {
 	border-bottom: 2px solid black;
 }
 
-.logininput input[type='text']:focus {
-	outline: none;
-}
-
-.logininput input[type='password'] {
-	box-sizing: border-box;
-	letter-spacing: 1px;
-	color: black;
-	font-size: large;
-	font-weight: bold;
-	font-family: 'M PLUS Rounded 1c', sans-serif;
-	border: none;
-	border-bottom: 2px solid black;
-}
-
-.logininput input[type='password']:focus {
-	outline: none;
-}
-
-.logininput input[type='number'] {
-	box-sizing: border-box;
-	letter-spacing: 1px;
-	color: black;
-	font-size: large;
-	font-weight: bold;
-	font-family: 'M PLUS Rounded 1c', sans-serif;
-	border: none;
-	border-bottom: 2px solid black;
-}
-
-.logininput input[type='number']:focus {
+.logininput input[type='text']:focus,.logininput input[type='password']:focus,.logininput input[type='number']:focus {
 	outline: none;
 }
 
