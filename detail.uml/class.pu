@@ -36,7 +36,7 @@ package Model{
 		+findByTid(int tid):Pet
 		+findByPid(int pid):Pet
 		+insert(Pet p)
-		+update(int pid)
+		+update(Pet p)
 		+delete(int pid)
 	}
 
@@ -55,6 +55,7 @@ package Model{
 		+findAll():ArrayList<Booking>
 		+findByUid(int uid):Booking
 		+insert(Booking b)
+		+update(Booking b)
 		+delete(int bid)
 	}
 }

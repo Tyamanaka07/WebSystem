@@ -39,6 +39,11 @@ public class Booking {
 	 */
 	private String telNum;
 
+	/**
+	 * 予約したペット
+	 */
+	private Pet pet;
+
 
 	/**
 	 * 予約IDのgetter
@@ -134,6 +139,22 @@ public class Booking {
 	 */
 	public void setTelNum(String telNum) {
 		this.telNum = telNum;
+	}
+
+	/**
+	 * ペットのgetter
+	 * @return ペット
+	 */
+	public Pet getPet() {
+		return pet;
+	}
+
+	/**
+	 * ペットのsetter
+	 * @return ペット
+	 */
+	public void setPet(Pet pet) {
+		this.pet = pet;
 	}
 
 

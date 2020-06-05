@@ -39,7 +39,7 @@
 			<tr>
 			<td><img alt="" src="image/uprp_01.jpg"></td>
 			<td>${booking.tid}</td>
-			<td>${booking.pid}</td>
+			<td>${booking.pet}</td>
 			<td>♀</td>
 			<td>2020/7/7<br>14時30分</td>
 			<td><a href="#">変更</a><a href="#">削除</a></td>
