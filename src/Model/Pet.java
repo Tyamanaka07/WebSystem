@@ -40,6 +40,9 @@ public class Pet {
 	private String description;
 
 
+	public Pet() {
+
+	}
 	/**
 	 * コンストラクター
 	 * @param pid ペットID
