@@ -36,7 +36,7 @@ public class BookingCheckServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String pidStr = request.getParameter("pidStr");
+		String pidStr = request.getParameter("pid");
 		int pid = Integer.parseInt(pidStr);
 
 		PetDAO dao = new PetDAO();
@@ -54,8 +54,8 @@ public class BookingCheckServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		String bidStr = request.getParameter("bidStr");
-		String uidStr = request.getParameter("uidStr");
+		String bidStr = request.getParameter("bid");
+		String uidStr = request.getParameter("uid");
 //		String bookingDateStr = request.getParameter("bookingDateStr");
 		String telNum = request.getParameter("telNum");
 
