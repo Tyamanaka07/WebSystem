@@ -152,7 +152,7 @@ public class PetDAO {
 	public void update(Pet p) {
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
-			String sql = "UPDATE m_pet SET birthDate = ? ,sex = ? ,price = ? ,description = ? WHERE pid = ?;";
+			String sql = "UPDATE m_type SET birthDate = ? ,sex = ? ,price = ? ,description = ? WHERE pid = ?;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setDate(1, p.getBirthDate());
 			stmt.setString(2, p.getSex());
