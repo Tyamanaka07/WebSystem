@@ -15,16 +15,6 @@ public class Booking {
 	private int bid;
 
 	/**
-	 * ペットID
-	 */
-	private int pid;
-
-	/**
-	 * 種類ID
-	 */
-	private int tid;
-
-	/**
 	 * ユーザーID
 	 */
 	private int uid;
@@ -44,6 +34,11 @@ public class Booking {
 	 */
 	private Pet pet;
 
+	/**
+	 * 予約したペットの種類
+	 */
+	private Type type;
+
 
 	/**
 	 * 予約IDのgetter
@@ -59,38 +54,6 @@ public class Booking {
 	 */
 	public void setBid(int bid) {
 		this.bid = bid;
-	}
-
-	/**
-	 * ペットIDのgetter
-	 * @return ペットID
-	 */
-	public int getPid() {
-		return pid;
-	}
-
-	/**
-	 * ペットIDのsetter
-	 * @param pid ペットID
-	 */
-	public void setPid(int pid) {
-		this.pid = pid;
-	}
-
-	/**
-	 * ペットIDのgetter
-	 * @return ペットID
-	 */
-	public int getTid() {
-		return tid;
-	}
-
-	/**
-	 * ペットIDのsetter
-	 * @param pid ペットID
-	 */
-	public void setTid(int tid) {
-		this.tid = tid;
 	}
 
 	/**
@@ -157,24 +120,55 @@ public class Booking {
 		this.pet = pet;
 	}
 
+	/**
+	 * ペットの種類のgetter
+	 * @return ペット
+	 */
+	public Type getType() {
+		return type;
+	}
+
+	/**
+	 * ペットの種類のsetter
+	 * @return ペットの種類
+	 */
+	public void setType(Type type) {
+		this.type = type;
+	}
+
 
 	/**
 	 *コンストラクター
 	 * @param bid 予約ID
-	 * @param pid ペットID
-	 * @param tid 種類ID
 	 * @param uid ユーザーID
 	 * @param bookingDate 予約した日時
 	 * @param telNum ユーザーの電話番号
 	 */
-	public Booking(int bid, int pid, int tid, int uid,  Timestamp bookingDate, String telNum) {
+	public Booking(int bid, int uid,  Timestamp bookingDate, String telNum) {
 		super();
 		this.bid = bid;
-		this.pid = pid;
-		this.tid = tid;
 		this.uid = uid;
 		this.bookingDate = bookingDate;
 		this.telNum = telNum;
+	}
+
+	/**
+	 *コンストラクター
+	 * @param bid 予約ID
+	 * @param uid ユーザーID
+	 * @param bookingDate 予約した日時
+	 * @param telNum ユーザーの電話番号
+	 * * @param pet 予約したペット
+	 * * @param type 予約したペットの種類
+	 */
+	public Booking(int bid, int uid,  Timestamp bookingDate, String telNum, Pet pet, Type type) {
+		super();
+		this.bid = bid;
+		this.uid = uid;
+		this.bookingDate = bookingDate;
+		this.telNum = telNum;
+		this.pet = pet;
+		this.type = type;
 	}
 
 
