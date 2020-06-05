@@ -35,7 +35,7 @@ package Model{
 		+findByTid(int tid):Pet
 		+findByPid(int pid):Pet
 		+insert(Pet p)
-		+update(int pid)
+		+update(Pet p)
 		+delete(int pid)
 	}
 

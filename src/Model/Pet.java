@@ -49,7 +49,7 @@ public class Pet {
 	 * @param price ペットの値段
 	 * @param description ペットの説明
 	 */
-	public Pet(int pid, int tid, Date birthDate, String sex, int price, String description) {
+	public Pet(int pid, int tid,  Date birthDate, String sex, int price, String description) {
 		super();
 		this.pid = pid;
 		this.tid = tid;
