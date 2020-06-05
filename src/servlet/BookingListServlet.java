@@ -9,9 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.Booking;
 import Model.BookingDAO;
+import Model.Pet;
+import Model.PetDAO;
+import Model.User;
 
 /**
  * Servlet implementation class BookingListServlet
@@ -33,10 +37,25 @@ public class BookingListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		BookingDAO dao = new BookingDAO();
-		ArrayList<Booking> list = dao.findAll();
+		HttpSession session = request.getSession();
 
-		request.setAttribute("list", list);
+		User u = (User) session.getAttribute("user");
+
+		if ( u == null) {
+			response.sendRedirect("login");
+			return;
+		}
+
+		BookingDAO bdao = new BookingDAO();
+		ArrayList<Booking> blist = bdao.findAll();
+
+		for 
+		
+		
+
+		request.setAttribute("blist", blist);
+
+
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglist.jsp");
 		dispatcher.forward(request, response);

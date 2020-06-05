@@ -37,11 +37,12 @@ public class BookingDAO {
 			while (rs.next()) {
 				int bid = rs.getInt("bid");
 				int pid = rs.getInt("pid");
+				int tid = rs.getInt("tid");
 				int uid = rs.getInt("uid");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
 
-				Booking b = new Booking(bid, pid, uid, bookingDate, telNum);
+				Booking b = new Booking(bid, pid, tid, uid, bookingDate, telNum);
 				list.add(b);
 
 			}
@@ -71,10 +72,12 @@ public class BookingDAO {
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				String name = rs.getString("name");
-				String adr = rs.getString("adr");
+				int bid = rs.getInt("bid");
+				int pid = rs.getInt("pid");
+				Timestamp bookingDate = rs.getTimestamp("bookingDate");
+				String telNum = rs.getString("telNum");
 
-				m = new Booking(mid, name, adr);
+				b = new Booking(bid, pid, uid, bookingDate, telNum);
 
 			}
 			rs.close();
@@ -83,23 +86,25 @@ public class BookingDAO {
 		} catch (SQLException e) {
 			System.out.println("findAllエラー：" + e.getMessage());
 		}
-		return m;
+		return b;
 	}
 
 	/**
 	 * 予約情報の追加
+	 * @param b 予約クラス
 	 */
 	public void insert(Booking b) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "INSERT into Booking (name, adr) values(?,?)";
+			String sql = "INSERT into booking (pid, uid, bookingDate, telNum) values(?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
-			stmt.setString(1, m.getName());
-			stmt.setString(2, m.getAdr());
+			stmt.setInt(1, b.getPid());
+			stmt.setInt(2, b.getUid());
+			stmt.setTimestamp(3, b.getBookingDate());
+			stmt.setString(4, b.getTelNum());
 
 			stmt.executeUpdate();
-
 			stmt.close();
 
 		} catch (SQLException e) {
@@ -108,18 +113,38 @@ public class BookingDAO {
 	}
 
 	/**
-	 * 予約情報の削除
+	 *予約の変更
+	 * @param b 予約クラス
 	 */
-	public void delete(int uid ,int bid) {
+	public static void update(Booking b) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "DELETE FROM booking WHERE mid=?";
+			String sql = "UPDATE booking SET bookingDate=? WHERE (bid=?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
-			stmt.setInt(1, mid);
+			stmt.setTimestamp(1, b.getBookingDate());
+			stmt.setInt(2, b.getBid());
 
 			stmt.executeUpdate();
+			stmt.close();
 
+		} catch (SQLException e) {
+			System.out.println("updateエラー：" + e.getMessage());
+		}
+	}
+
+	/**
+	 * 予約情報の削除
+	 */
+	public void delete(int bid) {
+		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
+
+			String sql = "DELETE FROM booking WHERE bid=?";
+			PreparedStatement stmt = con.prepareStatement(sql);
+
+			stmt.setInt(1, bid);
+
+			stmt.executeUpdate();
 			stmt.close();
 
 		} catch (SQLException e) {

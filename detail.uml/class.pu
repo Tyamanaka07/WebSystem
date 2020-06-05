@@ -25,7 +25,9 @@ package Model{
 	class Booking{
 		-bid:int
 		-pid:int
+		-tid:int
 		-uid:int
+		-tid:int
 		-bookingDate:Timestamp
 		-telNum:String
 	}
@@ -35,7 +37,7 @@ package Model{
 		+findByTid():ArrayList<Pet>
 		+findByPid(int pid):Pet
 		+insert(Pet p)
-		+update(int pid)
+		+update(Pet p)
 		+delete(int pid)
 	}
 
@@ -54,6 +56,7 @@ package Model{
 		+findAll():ArrayList<Booking>
 		+findByUid(int uid):Booking
 		+insert(Booking b)
+		+update(Booking b)
 		+delete(int bid)
 	}
 }
