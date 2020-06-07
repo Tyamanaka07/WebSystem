@@ -58,13 +58,11 @@ public class PetDAO {
 	 * データベース内のデータを取得する
 	 * @return ArrayList<Pet>型の変数を返す
 	 */
-<<<<<<< HEAD
-	public ArrayList<Pet> findByTid() {
-=======
+
+
 	public Pet findByTid(int tid) {
 		Pet p = null;
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
->>>>>>> branch 'master' of https://github.com/Tyamanaka07/WebSystem.git
 
 
 			String sql = "SELECT * FROM m_pet WHERE tid = ?;";
