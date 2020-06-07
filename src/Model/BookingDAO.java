@@ -36,12 +36,11 @@ public class BookingDAO {
 
 			while (rs.next()) {
 				int bid = rs.getInt("bid");
-				int pid = rs.getInt("pid");
 				int uid = rs.getInt("uid");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
 
-				Booking b = new Booking(bid, pid, uid, bookingDate, telNum);
+				Booking b = new Booking(bid, uid, bookingDate, telNum);
 				list.add(b);
 
 			}
@@ -72,11 +71,10 @@ public class BookingDAO {
 
 			if (rs.next()) {
 				int bid = rs.getInt("bid");
-				int pid = rs.getInt("pid");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
 
-				b = new Booking(bid, pid, uid, bookingDate, telNum);
+				b = new Booking(bid, uid, bookingDate, telNum);
 
 			}
 			rs.close();
@@ -98,7 +96,7 @@ public class BookingDAO {
 			String sql = "INSERT into booking (pid, uid, bookingDate, telNum) values(?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
-			stmt.setInt(1, b.getPid());
+			stmt.setInt(1, b.getPet().getPid());
 			stmt.setInt(2, b.getUid());
 			stmt.setTimestamp(3, b.getBookingDate());
 			stmt.setString(4, b.getTelNum());

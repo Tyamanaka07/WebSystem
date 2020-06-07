@@ -1,10 +1,26 @@
 @startuml
 title ログイン
 actor ユーザー
+
+participant LoginServlet
+participant login.jsp
+participant UserDAO
+database m_user
+participant top
+
 autonumber "#"
 
-ユーザー->トップ画面:ログインボタン
-トップ画面->ログイン画面:遷移
-ユーザー->ログイン画面:氏名とパスワードを入力
+ユーザー->LoginServlet:ログインボタン押下
+LoginServlet->login.jsp:フォワード
+login.jsp-->ユーザー:フォーム表示
+ユーザー->LoginServlet:フォーム入力
+LoginServlet->UserDAO:new UserDAO()
+LoginServlet->UserDAO:login()
+UserDAO->m_user:照合
+UserDAO-->LoginServlet:データ
+LoginServlet->top:リダイレクト
+LoginServlet->login.jsp:エラーメッセージ,フォワード
+login.jsp-->ユーザー:エラーメッセージ表示
+top-->ユーザー:表示
 
 @enduml

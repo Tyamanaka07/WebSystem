@@ -25,6 +25,7 @@ package Model{
 	class Booking{
 		-bid:int
 		-pid:int
+		-tid:int
 		-uid:int
 		-tid:int
 		-bookingDate:Timestamp
@@ -33,7 +34,7 @@ package Model{
 
 	class PetDAO{
 		+findAll():ArrayList<Pet>
-		+findByTid(int tid):Pet
+		+findByTid():ArrayList<Pet>
 		+findByPid(int pid):Pet
 		+insert(Pet p)
 		+update(Pet p)
