@@ -36,10 +36,9 @@ public class PetListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		//String tidStr = request.getParameter("tid");
-		//int tid = Integer.parseInt(tidStr);
+		String tidStr = request.getParameter("tid");
+		int tid = Integer.parseInt(tidStr);
 
-		int tid = 1;
 		PetDAO pdao = new PetDAO();
 		TypeDAO tdao = new TypeDAO();
 
