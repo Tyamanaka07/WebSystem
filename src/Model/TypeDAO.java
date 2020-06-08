@@ -75,7 +75,7 @@ public class TypeDAO {
 
 		}
 		catch(SQLException e) {
-			System.out.println("findBySid：" + e.getMessage());
+			System.out.println("findByTid：" + e.getMessage());
 		}
 		return t;
 	}
