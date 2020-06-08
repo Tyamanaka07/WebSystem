@@ -13,7 +13,7 @@ import java.sql.SQLException;
  */
 public class UserDAO {
 
-	static final String URL = "jdbc:mysql://localhost/club?useSSL=false";
+	static final String URL = "jdbc:mysql://localhost/m_user?useSSL=false";
 	static final String USER = "Java";
 	static final String PASS = "pass";
 

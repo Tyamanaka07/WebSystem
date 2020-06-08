@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class BookingDAO {
 
-	static final String URL = "jdbc:mysql://localhost/club?useSSL=false";
+	static final String URL = "jdbc:mysql://localhost/m_booking?useSSL=false";
 	static final String USER = "Java";
 	static final String PASS = "pass";
 
