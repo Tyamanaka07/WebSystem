@@ -43,7 +43,7 @@
 			<td>${booking.pet.sex}</td>
 			<td>${booking.bookingDate}</td>
 
-			<td><a href="bookingUpdate">変更</a><a href="bookingDelete">削除</a></td>
+			<td><a href="bookingUpdate?bid=${ booking.bid }">変更</a><a href="bookingDelete?bid=${ booking.bid }">削除</a></td>
 			</tr>
 			</c:forEach>
 		</table>
