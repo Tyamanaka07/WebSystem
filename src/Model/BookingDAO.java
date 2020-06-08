@@ -91,24 +91,25 @@ public class BookingDAO {
 	 * 予約IDによる予約の検索
 	 * @return 予約情報
 	 */
-	public Booking findByBid() {
+	public Booking findByBid(int bid) {
 		Booking b = null;
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SELECT * FROM booking";
+			String sql = "SELECT * FROM booking WHERE bid = ?";
+
 			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setInt(1, bid);
 
 			ResultSet rs = stmt.executeQuery();
 
-			while (rs.next()) {
-				int bid = rs.getInt("bid");
+			if (rs.next()) {
+
 				int uid = rs.getInt("uid");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
 
-				Booking b = new Booking(bid, uid, bookingDate, telNum);
-				list.add(b);
+				b = new Booking(bid, uid, bookingDate, telNum);
 
 			}
 			rs.close();
@@ -117,7 +118,7 @@ public class BookingDAO {
 		} catch (SQLException e) {
 			System.out.println("findAllエラー：" + e.getMessage());
 		}
-		return list;
+		return b;
 	}
 
 	/**

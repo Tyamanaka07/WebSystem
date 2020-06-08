@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 /**
  * ユーザーのDAO
- * @author edu11
+ * @author 中川伶丞
  *
  */
 public class UserDAO {

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Model.Booking;
 import Model.BookingDAO;
 
 /**
@@ -40,9 +41,9 @@ public class BookingUpdateServlet extends HttpServlet {
 		int bid = Integer.parseInt(bidStr);
 
 		BookingDAO dao = new BookingDAO();
-		Booking b = dao.findAll()
+		Booking b = dao.findByBid(bid);
 
-		request.setAttribute("Booking", b);
+		request.setAttribute("booking", b);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookingUpdate.jsp");
 		dispatcher.forward(request, response);
