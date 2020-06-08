@@ -34,8 +34,8 @@
 		<h2>新規予約</h2>
 		<div class="booking">
 			<img alt="" src="image/uprp_01.jpg">
-			<span>${ p.birthDate }生まれ</span><span>${ p.sex }</span><span>${ p.price }</span>
-			<div>${ p.description }</div><br>
+			<span>${ pet.birthDate }生まれ</span><span>${ pet.sex }</span><span>${ pet.price }</span>
+			<div>${ pet.description }</div><br>
 			<form class="input" action="booking" method="post">
 				日時：
 				<label><input type="datetime-local" min="2020-06-03T00:00" /></label>
