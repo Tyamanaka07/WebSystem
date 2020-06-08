@@ -56,14 +56,14 @@ public class BookingCheckServlet extends HttpServlet {
 
 		String bidStr = request.getParameter("bid");
 		String uidStr = request.getParameter("uid");
-//		String bookingDateStr = request.getParameter("bookingDateStr");
+		String bookingDateStr = request.getParameter("bookingDateStr");
 		String telNum = request.getParameter("telNum");
 
 		int bid = Integer.parseInt(bidStr);
 		int uid = Integer.parseInt(uidStr);
 
 		try {
-			Timestamp bookingDate = new Timestamp(new SimpleDateFormat("yyyy/MM/dd").parse(request.getParameter("bookingDateStr")).getTime());
+			Timestamp bookingDate = new Timestamp(new SimpleDateFormat("yyyy/MM/dd").parse(request.getParameter(bookingDateStr)).getTime());
 
 			BookingDAO dao = new BookingDAO();
 			dao.insert(new Booking(bid, uid, bookingDate, telNum));
