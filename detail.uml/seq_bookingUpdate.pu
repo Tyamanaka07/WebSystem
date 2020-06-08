@@ -4,15 +4,19 @@ title 予約情報更新
 autonumber "#."
 
 actor ユーザー
-participant 予約一覧画面
-participant 予約更新画面
-database 予約DB
+participant BookingUpdateServlet
+participant BookingDAO
+participant bookingUpdate.jsp
 
-ユーザー->予約一覧画面:予約一覧ボタン
-予約一覧画面->予約更新画面 : 予約更新ボタン
-予約更新画面->予約DB : 更新
-予約更新画面->予約一覧画面 : 遷移
-予約一覧画面->ユーザー : 表示
+ユーザー -> BookingUpdateServlet : 予約更新ボタン
+BookingUpdateServlet -> bookingUpdate.jsp : フォワード
+bookingUpdate.jsp -> ユーザー : フォームを表示
+ユーザー -> bookingUpdate.jsp : フォームを入力
+bookingUpdate.jsp -> BookingUpdateServlet : POST()
+BookingUpdateServlet -> BookingDAO : 生成()
+BookingUpdateServlet -> BookingDAO : Update()
+BookingUpdateServlet ->  bookingList : リダイレクト
+bookingList -> ユーザー : 表示()
 
 
 @enduml
