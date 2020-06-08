@@ -50,14 +50,13 @@ public class LoginServlet extends HttpServlet {
 		User u = udao.login(name,pass);
 
 		if(u != null) {
-			response.sendRedirect("topDiagram");
 			HttpSession session = request.getSession();
 			session.setAttribute("user",u);
+			response.sendRedirect("topDiagram");
 		}
 		else {
 			HttpSession session = request.getSession();
 			session.setAttribute("error", "パスワードが違います。");
-
 			response.sendRedirect("login");
 		}
 	}
