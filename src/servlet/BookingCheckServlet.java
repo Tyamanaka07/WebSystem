@@ -19,6 +19,11 @@ import Model.Pet;
 import Model.PetDAO;
 import Model.User;
 
+
+/**
+ * @author 中川伶丞
+ */
+
 /**
  * Servlet implementation class BookingCheckServlet
  */
@@ -73,7 +78,7 @@ public class BookingCheckServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-
+		response.sendRedirect("bookinglist");
 	}
 
 }
