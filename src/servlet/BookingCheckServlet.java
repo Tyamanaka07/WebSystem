@@ -68,7 +68,6 @@ public class BookingCheckServlet extends HttpServlet {
 			BookingDAO dao = new BookingDAO();
 			dao.insert(new Booking(bid, uid, bookingDate, telNum));
 
-
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
