@@ -55,9 +55,8 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("topDiagram");
 		}
 		else {
-			HttpSession session = request.getSession();
-			session.setAttribute("error", "パスワードが違います。");
-			response.sendRedirect("login");
+			System.out.println(name);
+			System.out.println("中川です");
 		}
 	}
 
