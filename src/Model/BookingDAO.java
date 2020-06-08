@@ -29,7 +29,7 @@ public class BookingDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SELECT * FROM booking";
+			String sql = "SELECT * FROM m_booking";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			ResultSet rs = stmt.executeQuery();
@@ -62,7 +62,7 @@ public class BookingDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SELECT * FROM booking WHERE uid = ?";
+			String sql = "SELECT * FROM m_booking WHERE uid = ?";
 
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, uid);
@@ -96,7 +96,7 @@ public class BookingDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SELECT * FROM booking WHERE bid = ?";
+			String sql = "SELECT * FROM m_booking WHERE bid = ?";
 
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, bid);
@@ -128,7 +128,7 @@ public class BookingDAO {
 	public void insert(Booking b) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "INSERT into booking (pid, uid, bookingDate, telNum) values(?,?,?,?)";
+			String sql = "INSERT into m_booking (pid, uid, bookingDate, telNum) values(?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setInt(1, b.getPet().getPid());
@@ -151,7 +151,7 @@ public class BookingDAO {
 	public static void update(Booking b) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "UPDATE booking SET bookingDate=? WHERE (bid=?)";
+			String sql = "UPDATE m_booking SET bookingDate=? WHERE (bid=?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setTimestamp(1, b.getBookingDate());
@@ -171,7 +171,7 @@ public class BookingDAO {
 	public void delete(int bid) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "DELETE FROM booking WHERE bid=?";
+			String sql = "DELETE FROM m_booking WHERE bid=?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setInt(1, bid);
