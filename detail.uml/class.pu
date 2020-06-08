@@ -135,4 +135,6 @@ BookingDAO..>Booking
 PetDAO..>Pet
 TypeDAO..>Type
 UserDAO..>User
+Booking->Pet
+Pet->Type
 @enduml

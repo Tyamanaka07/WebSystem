@@ -35,13 +35,13 @@
 			<tr>
 			<th></th><th>種類</th><th>生年月日</th><th>性別</th><th>予約日時</th><th></th>
 			</tr>
-			<c:forEach var="booking" items="${list}">
+			<c:forEach var="booking" items="${blist}">
 			<tr>
 			<td><img alt="" src="image/uprp_01.jpg"></td>
-			<td>${booking.tid}</td>
-			<td>${booking.pet}</td>
-			<td>♀</td>
-			<td>2020/7/7<br>14時30分</td>
+			<td>${booking.type.tname}</td>
+			<td>${booking.pet.birthDate}</td>
+			<td>${booking.pet.sex}</td>
+			<td>${booking.bookingDate}</td>
 			<td><a href="#">変更</a><a href="#">削除</a></td>
 			</tr>
 			</c:forEach>
