@@ -15,7 +15,7 @@
 				<li><a href="login.jsp">ログアウト</a></li> -->
 				<li><a href="login.jsp">ログイン</a></li>
 			</ul>
-			<h1><a href="top.jsp">Nakagawa's</a></h1>
+			<h1><a href="topDiagram">Nakagawa's</a></h1>
 		</div>
 		<nav>
 			<ul>
