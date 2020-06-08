@@ -13,7 +13,7 @@ import java.sql.SQLException;
  */
 public class UserDAO {
 
-	static final String URL = "jdbc:mysql://localhost/m_user?useSSL=false";
+	static final String URL = "jdbc:mysql://localhost/pet_sysdb?useSSL=false";
 	static final String USER = "Java";
 	static final String PASS = "pass";
 
@@ -27,7 +27,7 @@ public class UserDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SElECT * FROM user WHERE uname = ? and password = ?";
+			String sql = "SELECT * FROM user WHERE uname = ? and password = ?";
 
 
 			PreparedStatement stmt = con.prepareStatement(sql);

@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class BookingDAO {
 
-	static final String URL = "jdbc:mysql://localhost/m_booking?useSSL=false";
+	static final String URL = "jdbc:mysql://localhost/pet_sysdb?useSSL=false";
 	static final String USER = "Java";
 	static final String PASS = "pass";
 
@@ -62,7 +62,7 @@ public class BookingDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SElECT * FROM booking WHERE uid = ?";
+			String sql = "SELECT * FROM booking WHERE uid = ?";
 
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, uid);
