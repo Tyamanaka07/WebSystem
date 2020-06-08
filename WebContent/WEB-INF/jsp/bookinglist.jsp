@@ -1,3 +1,6 @@
+<!-- 中川伶丞 -->
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -16,6 +19,7 @@
 			<ul>
 				<li><a href="bookinglist.jsp">予約一覧</a></li>
 				<li><a href="login.jsp">ログアウト</a></li>
+			</ul>
 			<h1><a href="top.jsp">Nakagawa's</a></h1>
 		</div>
 		<nav>

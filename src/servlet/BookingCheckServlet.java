@@ -11,11 +11,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.Booking;
 import Model.BookingDAO;
 import Model.Pet;
 import Model.PetDAO;
+import Model.User;
+
+
+/**
+ * @author 中川伶丞
+ */
 
 /**
  * Servlet implementation class BookingCheckServlet
@@ -54,26 +61,24 @@ public class BookingCheckServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		String bidStr = request.getParameter("bid");
-		String uidStr = request.getParameter("uid");
+		HttpSession session = request.getSession();
+		User u = (User) session.getAttribute("user");
+
 		String bookingDateStr = request.getParameter("bookingDateStr");
 		String telNum = request.getParameter("telNum");
 
-		int bid = Integer.parseInt(bidStr);
-		int uid = Integer.parseInt(uidStr);
 
 		try {
 			Timestamp bookingDate = new Timestamp(new SimpleDateFormat("yyyy/MM/dd").parse(request.getParameter(bookingDateStr)).getTime());
 
 			BookingDAO dao = new BookingDAO();
-			dao.insert(new Booking(bid, uid, bookingDate, telNum));
-
+			dao.insert(new Booking(0, u.getUid(), bookingDate, telNum));
 
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 
-
+		response.sendRedirect("bookinglist");
 	}
 
 }

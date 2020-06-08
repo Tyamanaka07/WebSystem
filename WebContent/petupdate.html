@@ -5,7 +5,7 @@
 <link href="css/style.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-<title>ペット追加</title>
+<title>ペット編集</title>
 </head>
 <body>
 	<header>
@@ -20,7 +20,7 @@
 
 	<main class="sub">
 		<form class="logininput" action="insert" method="post">
-			新ペット：
+			ペット編集：
 			<input type="date" max="2020-06-03" />生まれ　/　
 			<span class="radio">
 			♂<input type="radio" name="gender" value="0" checked>
@@ -29,11 +29,11 @@
 			　/　値段：￥<input type="number" name="price">
 			<div>説明：<input class="description" type="text" name="description"></div>
 			<label class="upload-img-btn">
-    			画像を選択する
+    			画像を変更する
     			<input type="file" name="image" style="display:none">
 			</label>
 			<br>
-			<input class="btn3" type="submit" value="追加">
+			<input class="btn3" type="submit" value="変更">
 		</form>
 	</main>
 
