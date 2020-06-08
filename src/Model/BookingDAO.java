@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  * 予約のDAO
- * @author edu11
+ * @author 中川伶丞
  *
  */
 public class BookingDAO {
@@ -55,10 +55,10 @@ public class BookingDAO {
 
 	/**
 	 * uidによる予約の検索
-	 * @return 予約情報
+	 * @return 予約情報のリスト
 	 */
-	public Booking findByUid(int uid) {
-		Booking b = null;
+	public ArrayList<Booking> findByUid(int uid) {
+		ArrayList<Booking> list = new ArrayList<>();
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
@@ -69,12 +69,46 @@ public class BookingDAO {
 
 			ResultSet rs = stmt.executeQuery();
 
-			if (rs.next()) {
+			while (rs.next()) {
 				int bid = rs.getInt("bid");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
 
-				b = new Booking(bid, uid, bookingDate, telNum);
+				Booking b = new Booking(bid, uid, bookingDate, telNum);
+
+				list.add(b);
+			}
+			rs.close();
+			stmt.close();
+
+		} catch (SQLException e) {
+			System.out.println("findAllエラー：" + e.getMessage());
+		}
+		return list;
+	}
+
+	/**
+	 * 予約IDによる予約の検索
+	 * @return 予約情報
+	 */
+	public Booking findByBid() {
+		Booking b = null;
+
+		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
+
+			String sql = "SELECT * FROM booking";
+			PreparedStatement stmt = con.prepareStatement(sql);
+
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				int bid = rs.getInt("bid");
+				int uid = rs.getInt("uid");
+				Timestamp bookingDate = rs.getTimestamp("bookingDate");
+				String telNum = rs.getString("telNum");
+
+				Booking b = new Booking(bid, uid, bookingDate, telNum);
+				list.add(b);
 
 			}
 			rs.close();
@@ -83,7 +117,7 @@ public class BookingDAO {
 		} catch (SQLException e) {
 			System.out.println("findAllエラー：" + e.getMessage());
 		}
-		return b;
+		return list;
 	}
 
 	/**

@@ -100,7 +100,7 @@ public class PetDAO {
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
 
-			String sql = "SELECT * FROM m_pet WHERE pid = ?;";
+			String sql = "SELECT * FROM pet_sysdb.m_pet WHERE pid = ?;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, pid);
 
@@ -132,7 +132,7 @@ public class PetDAO {
 		try {
 			Connection con = DriverManager.getConnection (URL,USER,PASS);
 
-			String sql = "INSERT INTO m_pet (birthDate,sex,price,description) VALUES(?, ?, ?, ?)";
+			String sql = "INSERT INTO pet_sysdb.m_pet (birthDate,sex,price,description) VALUES(?, ?, ?, ?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setDate(1,p.getBirthDate());
 			stmt.setString(2,p.getSex());
@@ -155,7 +155,7 @@ public class PetDAO {
 	public void update(Pet p) {
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
-			String sql = "UPDATE m_type SET birthDate = ? ,sex = ? ,price = ? ,description = ? WHERE pid = ?;";
+			String sql = "UPDATE pet_sysdb.m_type SET birthDate = ? ,sex = ? ,price = ? ,description = ? WHERE pid = ?;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setDate(1, p.getBirthDate());
 			stmt.setString(2, p.getSex());
