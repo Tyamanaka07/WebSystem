@@ -46,7 +46,7 @@ public class PetListServlet extends HttpServlet {
 		ArrayList<Pet> plist = new ArrayList<Pet>();
 		Type t = new Type();
 
-		plist = pdao.findAll();
+		plist = pdao.findByTid(tid);
 		t = tdao.findByTid(tid);
 
 		request.setAttribute("plist", plist);
