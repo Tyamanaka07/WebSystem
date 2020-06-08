@@ -14,7 +14,7 @@
 	<header>
 		<div class="top">
 			<ul>
-				<li><a href="bookinglist.html">予約一覧</a></li>
+				<li><a href="bookinglist.jsp">予約一覧</a></li>
 				<li><a href="login.html">ログアウト</a></li>
 			</ul>
 			<h1><a href="top.html">Nakagawa's</a></h1>
@@ -22,9 +22,9 @@
 		<nav>
 			<ul>
 				<li><a href="top.html">トップページ</a></li>
-				<li><a href="index.html">ウーパールーパー</a></li>
-				<li><a href="index.html">ワンちゃん</a></li>
-				<li><a href="index.html">ネコちゃん</a></li>
+				<li><a href="plist.jsp?tid=1">ウーパールーパー</a></li>
+				<li><a href="plist.jsp?tid=2">ワンちゃん</a></li>
+				<li><a href="plist.jsp?tid=3">ネコちゃん</a></li>
 			</ul>
 		</nav>
 	</header>
