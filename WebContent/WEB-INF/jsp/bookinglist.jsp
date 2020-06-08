@@ -15,27 +15,15 @@
 		<div class="top">
 			<ul>
 				<li><a href="bookinglist.jsp">予約一覧</a></li>
-<<<<<<< HEAD
-				<li><a href="login.html">ログアウト</a></li>
-=======
 				<li><a href="login.jsp">ログアウト</a></li>
->>>>>>> branch 'master' of https://github.com/Tyamanaka07/WebSystem.git
-			</ul>
 			<h1><a href="top.jsp">Nakagawa's</a></h1>
 		</div>
 		<nav>
 			<ul>
-<<<<<<< HEAD
 				<li><a href="top.html">トップページ</a></li>
 				<li><a href="plist.jsp?tid=1">ウーパールーパー</a></li>
 				<li><a href="plist.jsp?tid=2">ワンちゃん</a></li>
 				<li><a href="plist.jsp?tid=3">ネコちゃん</a></li>
-=======
-				<li><a href="top.jsp">トップページ</a></li>
-				<li><a href="index.jsp">ウーパールーパー</a></li>
-				<li><a href="index.jsp">ワンちゃん</a></li>
-				<li><a href="index.jsp">ネコちゃん</a></li>
->>>>>>> branch 'master' of https://github.com/Tyamanaka07/WebSystem.git
 			</ul>
 		</nav>
 	</header>
