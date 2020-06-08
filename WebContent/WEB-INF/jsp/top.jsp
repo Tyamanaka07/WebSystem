@@ -20,9 +20,9 @@
 		<nav>
 			<ul>
 				<li><a href="top.jsp">トップページ</a></li>
-				<li><a href="index.jsp">ウーパールーパー</a></li>
-				<li><a href="#">ワンちゃん</a></li>
-				<li><a href="#">ネコちゃん</a></li>
+				<li><a href="petlist?tid=0">ウーパールーパー</a></li>
+				<li><a href="petlist?tid=1">ワンちゃん</a></li>
+				<li><a href="petlist?tid=2">ネコちゃん</a></li>
 			</ul>
 		</nav>
 	</header>
