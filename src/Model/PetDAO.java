@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Nakagawa
  */
 public class PetDAO {
-	static final String URL =  "jdbc:mysql://localhost/m_pet?useSSL=false";
+	static final String URL =  "jdbc:mysql://localhost/pet_sysdb.m_pet?useSSL=false";
 	static final String USER = "java";
 	static final String PASS = "pass";
 
