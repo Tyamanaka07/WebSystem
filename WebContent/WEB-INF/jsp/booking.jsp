@@ -39,6 +39,7 @@
 			<form class="input" action="booking" method="post">
 				日時：
 				<label><input type="datetime-local" min="2020-06-03T00:00" /></label>
+							<input type="hidden" name="pid" value="pid">
 				　　電話番号：<input type="text" name="telNum"><br>
 				この子を<input class="btn2" type="submit" value="予約">します
 			</form>
