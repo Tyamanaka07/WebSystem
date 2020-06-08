@@ -348,10 +348,10 @@ nav a:hover {
 	margin: 10px;
 }
 
-.bookingdelete {
+.delete {
 	margin: 110px;
 	margin-bottom: 25px;
-	margin-top: 25px;
+	margin-top: 0;
 	text-align: center;
 }
 
