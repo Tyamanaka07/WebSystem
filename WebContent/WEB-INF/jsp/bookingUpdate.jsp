@@ -13,7 +13,7 @@
 	<header>
 		<div class="topDiagram">
 			<ul>
-				<li><a href="bookingList">予約一覧</a></li>
+				<li><a href="bookinglist">予約一覧</a></li>
 				<li><a href="login">ログアウト</a></li>
 			</ul>
 			<h1><a href="topDiagram">Nakagawa's</a></h1>

@@ -73,8 +73,6 @@ public class BookingCheckServlet extends HttpServlet {
 		}
 
 
-
-
 	}
 
 }
