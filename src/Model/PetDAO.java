@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Nakagawa
  */
 public class PetDAO {
-	static final String URL =  "jdbc:mysql://localhost/pet_sysdb.m_pet?useSSL=false";
+	static final String URL =  "jdbc:mysql://localhost/pet_sysdb?useSSL=false";
 	static final String USER = "java";
 	static final String PASS = "pass";
 
@@ -26,7 +26,7 @@ public class PetDAO {
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
 
-			String sql = "SELECT * FROM m_pet;";
+			String sql = "SELECT * FROM pet_sysdb.m_pet;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			ResultSet rs = stmt.executeQuery();
@@ -65,12 +65,12 @@ public class PetDAO {
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
 
-			String sql = "SELECT * FROM m_pet WHERE tid = ?;";
+			String sql = "SELECT * FROM pet_sysdb.m_pet WHERE tid = ?;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, tid);
 
 			ResultSet rs = stmt.executeQuery();
-			if(rs.next()) {
+			while(rs.next()) {
 				int pid = rs.getInt("pid");
 				Date birthDate = rs.getDate("birthDate");
 				String sex = rs.getString("sex");
