@@ -40,7 +40,7 @@
 					<div class="btn">
 						<!-- <a href="#">編集</a>
 						<a href="#">削除</a> -->
-					<a href="BookingCheck?pid=${plist.pid}">予約</a>
+					<a href="bookingCheck?pid=${plist.pid}">予約</a>
 					</div>
 				</c:forEach>
 			</section>

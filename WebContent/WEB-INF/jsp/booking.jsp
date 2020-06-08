@@ -36,7 +36,7 @@
 			<img alt="" src="image/uprp_01.jpg">
 			<span>${ pet.birthDate }生まれ</span><span>${ pet.sex }</span><span>${ pet.price }</span>
 			<div>${ pet.description }</div><br>
-			<form class="input" action="booking" method="post">
+			<form class="input" action="bookingCheck" method="post">
 				日時：
 				<label><input type="datetime-local" min="2020-06-03T00:00" /></label>
 							<input type="hidden" name="pid" value="pid">
