@@ -27,7 +27,7 @@ public class UserDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SELECT * FROM pet_sysdb.m_user WHERE uname = ? and password = ?;";
+			String sql = "SELECT * FROM pet_sysdb.m_user WHERE uname=? and password=?;";
 
 
 			PreparedStatement stmt = con.prepareStatement(sql);
@@ -39,7 +39,6 @@ public class UserDAO {
 
 			if (rs.next()) {
 				int uid = rs.getInt("uid");
-
 				u = new User(uid, uname, password);
 
 			}
