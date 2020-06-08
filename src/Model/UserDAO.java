@@ -27,7 +27,7 @@ public class UserDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SELECT * FROM pet_sysdb.m_user WHERE uname = ? and password = ?";
+			String sql = "SELECT * FROM pet_sysdb.m_user WHERE uname = ? and password = ?;";
 
 
 			PreparedStatement stmt = con.prepareStatement(sql);
