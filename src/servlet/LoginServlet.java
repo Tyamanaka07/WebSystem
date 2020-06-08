@@ -14,6 +14,7 @@ import Model.User;
 import Model.UserDAO;
 
 /**
+ * @author 山中健裕
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/login")

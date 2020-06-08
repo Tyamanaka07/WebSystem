@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Nakagawa
+ * @author 山中健裕
  */
 public class PetDAO {
 	static final String URL =  "jdbc:mysql://localhost/pet_sysdb?useSSL=false";
