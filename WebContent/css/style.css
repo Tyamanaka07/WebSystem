@@ -253,6 +253,8 @@ nav a:hover {
 	font-weight: bold;
 	text-align: center;
 	margin-top: 20px;
+	margin-left: 280px;
+	margin-right: 280px;
 }
 
 .logininput input[type='text'],.logininput input[type='password'],.logininput input[type='number'] {
@@ -279,6 +281,8 @@ nav a:hover {
 	border: 0;
 	margin-top: 30px;
 	background-color: lavender;
+	cursor: pointer;
+	border-radius: 4px;
 }
 .loginbtn:hover {
 	opacity: 0.5;
@@ -321,7 +325,7 @@ nav a:hover {
 }
 
 .booking {
-	margin: 50px;
+	margin: 70px;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -342,6 +346,13 @@ nav a:hover {
 
 .booking span,div {
 	margin: 10px;
+}
+
+.bookingdelete {
+	margin: 110px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	text-align: center;
 }
 
 .input {
@@ -372,8 +383,25 @@ nav a:hover {
 	color: black;
 	border: 0;
 	margin-top: 30px;
+	cursor: pointer;
+	border-radius: 4px;
 }
 .btn2:hover {
+	opacity: 0.5;
+}
+
+.btn3 {
+	transition: opacity 0.24s ease-in;
+	font-size: large;
+	font-weight: bold;
+	background-color: lavender;
+	color: black;
+	border: 0;
+	margin-bottom: 50px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.btn3:hover {
 	opacity: 0.5;
 }
 
@@ -386,9 +414,29 @@ input[type="datetime-local"],input[type="date"] {
 	box-sizing: border-box;
 	border: none;
 	border-bottom: 2px solid black;
+	cursor: pointer;
 }
 
 input[type='datetime-local']:focus,input[type='date']:focus {
 	outline: none;
 }
 
+.description {
+	width: 700px;
+}
+
+.upload-img-btn {
+	transition: opacity 0.24s ease-in;
+    margin: 22px auto;
+    padding: 15px;
+    border-radius: 4px;
+    max-width: 150px;
+    text-align: center;
+    display: block;
+    background-color: lavender;
+    cursor: pointer;
+}
+
+.upload-img-btn:hover {
+	opacity: 0.5;
+}
