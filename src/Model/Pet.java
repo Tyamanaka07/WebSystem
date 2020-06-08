@@ -80,8 +80,8 @@ public class Pet {
 	}
 
 	/**
-	 * 種類IDのgetter
-	 * @return 種類ID
+	 * 種類のgetter
+	 * @return 種類
 	 */
 	public int getTid() {
 		return tid;

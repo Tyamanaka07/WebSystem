@@ -14,17 +14,17 @@
 	<header>
 		<div class="top">
 			<ul>
-				<li><a href="bookinglist.html">予約一覧</a></li>
-				<li><a href="login.html">ログアウト</a></li>
+				<li><a href="bookinglist.jsp">予約一覧</a></li>
+				<li><a href="login.jsp">ログアウト</a></li>
 			</ul>
-			<h1><a href="top.html">Nakagawa's</a></h1>
+			<h1><a href="top.jsp">Nakagawa's</a></h1>
 		</div>
 		<nav>
 			<ul>
-				<li><a href="top.html">トップページ</a></li>
-				<li><a href="index.html">ウーパールーパー</a></li>
-				<li><a href="index.html">ワンちゃん</a></li>
-				<li><a href="index.html">ネコちゃん</a></li>
+				<li><a href="top.jsp">トップページ</a></li>
+				<li><a href="index.jsp">ウーパールーパー</a></li>
+				<li><a href="index.jsp">ワンちゃん</a></li>
+				<li><a href="index.jsp">ネコちゃん</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -38,7 +38,7 @@
 			<c:forEach var="booking" items="${list}">
 			<tr>
 			<td><img alt="" src="image/uprp_01.jpg"></td>
-			<td>${booking.tid}</td>
+			<td>${booking.tname}</td>
 			<td>${booking.pet}</td>
 			<td>♀</td>
 			<td>2020/7/7<br>14時30分</td>
