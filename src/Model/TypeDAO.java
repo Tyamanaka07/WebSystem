@@ -13,7 +13,7 @@ import java.util.ArrayList;
 	 *
 	 */
 public class TypeDAO {
-	static final String URL =  "jdbc:mysql://localhost/m_pet?useSSL=false";
+	static final String URL =  "jdbc:mysql://localhost/m_type?useSSL=false";
 	static final String USER = "java";
 	static final String PASS = "pass";
 

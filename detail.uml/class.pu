@@ -49,7 +49,7 @@ package Model{
 	}
 
 	class UserDAO{
-		+findByUname(String uname):Booking
+		+login(String uname, String password):User
 	}
 
 	class BookingDAO{
