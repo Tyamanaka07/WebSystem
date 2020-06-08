@@ -16,6 +16,7 @@
 			<ul>
 				<li><a href="bookinglist.jsp">予約一覧</a></li>
 				<li><a href="login.jsp">ログアウト</a></li>
+			</ul>
 			<h1><a href="top.jsp">Nakagawa's</a></h1>
 		</div>
 		<nav>
