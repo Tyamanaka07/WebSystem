@@ -72,6 +72,7 @@ public class BookingCheckServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
+		response.sendRedirect("bookinglist");
 
 	}
 
