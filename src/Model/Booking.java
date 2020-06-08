@@ -158,8 +158,8 @@ public class Booking {
 	 * @param uid ユーザーID
 	 * @param bookingDate 予約した日時
 	 * @param telNum ユーザーの電話番号
-	 * * @param pet 予約したペット
-	 * * @param type 予約したペットの種類
+	 * @param pet 予約したペット
+	 * @param type 予約したペットの種類
 	 */
 	public Booking(int bid, int uid,  Timestamp bookingDate, String telNum, Pet pet, Type type) {
 		super();

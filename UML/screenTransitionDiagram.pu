@@ -1,36 +1,36 @@
 @startuml
 title ページ遷移図
 
-topPageDate : トップページ
-aList : ペット一覧
+topPage : トップページ
+petList : ペット一覧
 login : GET ログインページ \nPOST ログイン
-add : ペット情報追加 \nGET 登録確認 \nPOST 登録
-update : ペット情報編集 \nGET 編集確認 \nPOST 更新
+petAdd : ペット情報追加 \nGET 登録確認 \nPOST 登録
+petUpdate : ペット情報編集 \nGET 編集確認 \nPOST 更新
 booking : GET 予約確認\nPOST 予約
 bDel : 予約削除
-bUpdate : ユーザー予約情報更新 \nGET 更新確認 \nPOST 更新
-bList : ユーザー用予約リスト
+bookingUpdate : ユーザー予約情報更新 \nGET 更新確認 \nPOST 更新
+bookingList : ユーザー用予約リスト
 bManageList : 管理者用予約リスト
 
 
 [*] --> topPage
-topPage --> aList
+topPage --> petList
 topPage --> login
 login --> login : リンク\nuid\nuname\npass
-aList --> add : リンク \n
-add --> add : リンク \npid \ntid \ntname \nbirthDate \naSex \nprice
-aList --> booking : リンク \npid
+petList --> petAdd : リンク \n
+petAdd --> petAdd : リンク \npid \ntid \ntname \nbirthDate \naSex \nprice
+petList --> booking : リンク \npid
 booking --> booking : リンク \nuid \nbookingDate \ntelNum
-aList --> bList : リンク \nuid \npid
-bList --> bDel : リンク \nbid
-aList --> bManageList : リンク \nuid \npid
+petList --> bookingList : リンク \nuid \npid
+bookingList --> bDel : リンク \nbid
+petList --> bManageList : リンク \nuid \npid
 bManageList --> bDel : リンク \nbid
-aList --> aList : リンク \npid \ntid \nbirthDate \n aSex\nprice \nloginValue
-aList --> update : リンク \npid
-update --> update : リンク \npid \ntid \ntname \nbirthDate \nprice
-bList --> bUpdate : リンク \nbid \nuid \nbookingDate \ntelNum
-bManageList --> bUpdate : リンク \nbid \nuid \nbookingDate \ntelNum
-bUpdate --> bUpdate : リンク \nbid \nuid \nbookingDate \ntelNum
+petList --> petList : リンク \npid \ntid \nbirthDate \n sex\nprice \nloginValue
+petList --> petUpdate : リンク \npid
+petUpdate --> petUpdate : リンク \npid \ntid \ntname \nbirthDate \nprice
+bookingList --> bookingUpdate : リンク \nbid \nuid
+bManageList --> bookingUpdate : リンク \nbid \nuid
+bookingUpdate --> bookingUpdate : リンク \nbid \nuid \nbookingDate
 
 
 @enduml
