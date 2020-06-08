@@ -54,7 +54,8 @@ package Model{
 
 	class BookingDAO{
 		+findAll():ArrayList<Booking>
-		+findByUid(int uid):Booking
+		+findByUid(int uid):ArrayList<Booking>
+		+findByBid(int bid):Booking
 		+insert(Booking b)
 		+update(Booking b)
 		+delete(int bid)

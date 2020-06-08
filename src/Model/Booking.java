@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 /**
  * 予約の構成
- * @author edu11
+ * @author 中川伶丞
  *
  */
 public class Booking {
