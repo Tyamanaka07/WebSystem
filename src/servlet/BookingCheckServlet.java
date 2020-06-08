@@ -20,7 +20,7 @@ import Model.PetDAO;
 /**
  * Servlet implementation class BookingCheckServlet
  */
-@WebServlet("/booking")
+@WebServlet("/BookingCheck")
 public class BookingCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
