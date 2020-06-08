@@ -22,7 +22,7 @@ public class PetDAO {
 	 * @return ArrayList<Pet>型の変数を返す
 	 */
 	public ArrayList<Pet> findAll(){
-		ArrayList<Pet> plist = new ArrayList<Pet>();
+		ArrayList<Pet> plistAll = new ArrayList<Pet>();
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
 
@@ -41,7 +41,7 @@ public class PetDAO {
 
 
 				Pet p = new Pet(pid, tid, birthDate, sex, price, description);
-				plist.add(p);
+				plistAll.add(p);
 			}
 
 			stmt.close();
@@ -50,16 +50,18 @@ public class PetDAO {
 		catch(SQLException e) {
 			System.out.println("findAllエラー：" + e.getMessage());
 		}
-		return plist;
+		return plistAll;
 	}
 
 
 	/**
-	 * 種類別のデータを取得する
-	 * @return Pet型の変数を返す
+	 * データベース内のデータを取得する
+	 * @return ArrayList<Pet>型の変数を返す
 	 */
-	public Pet findByTid(int tid) {
-		Pet p = null;
+
+
+	public ArrayList<Pet> findByTid(int tid) {
+		ArrayList<Pet> plistTid = new ArrayList<Pet>();
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
 
@@ -76,7 +78,8 @@ public class PetDAO {
 				String description = rs.getString("description");
 
 
-				p = new Pet(pid, tid, birthDate, sex, price, description);
+				Pet p = new Pet(pid, tid, birthDate, sex, price, description);
+				plistTid.add(p);
 			}
 
 			stmt.close();
@@ -85,7 +88,7 @@ public class PetDAO {
 		catch(SQLException e) {
 			System.out.println("findBySid：" + e.getMessage());
 		}
-		return p;
+		return plistTid;
 	}
 
 	/**
@@ -152,7 +155,7 @@ public class PetDAO {
 	public void update(Pet p) {
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
-			String sql = "UPDATE m_pet SET birthDate = ? ,sex = ? ,price = ? ,description = ? WHERE pid = ?;";
+			String sql = "UPDATE m_type SET birthDate = ? ,sex = ? ,price = ? ,description = ? WHERE pid = ?;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setDate(1, p.getBirthDate());
 			stmt.setString(2, p.getSex());

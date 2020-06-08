@@ -34,7 +34,7 @@ package Model{
 
 	class PetDAO{
 		+findAll():ArrayList<Pet>
-		+findByTid(int tid):Pet
+		+findByTid():ArrayList<Pet>
 		+findByPid(int pid):Pet
 		+insert(Pet p)
 		+update(Pet p)
