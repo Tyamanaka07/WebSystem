@@ -86,7 +86,7 @@ public class PetDAO {
 
 		}
 		catch(SQLException e) {
-			System.out.println("findBySid：" + e.getMessage());
+			System.out.println("findByTid：" + e.getMessage());
 		}
 		return plistTid;
 	}
