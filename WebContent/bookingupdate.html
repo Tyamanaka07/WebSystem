@@ -5,7 +5,7 @@
 <link href="css/style.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-<title>予約一覧</title>
+<title>予約変更</title>
 </head>
 <body>
 	<header>
@@ -27,21 +27,17 @@
 	</header>
 
 	<main class="mainsub">
-	<h2>ナカガワ様の予約一覧</h2>
-		<table class="booking_list">
-			<tr>
-			<th></th><th>種類</th><th>生年月日</th><th>性別</th><th>予約日時</th><th></th>
-			</tr>
-			<tr>
-			<td><img alt="" src="image/uprp_01.jpg"></td><td>ウーパールーパー</td><td>2020/2/2</td><td>♀</td>
-			<td>2020/7/7<br>14時30分</td><td><a href="bookingupdate.html">変更</a><a href="bookingdelete.html">削除</a></td>
-			</tr>
-			<tr>
-			<td><img alt="" src="image/uprp_02.jpg"></td><td>ウーパールーパー</td><td>2020/3/3</td><td>♀</td>
-			<td>2020/7/17<br>9時00分</td><td><a href="#">変更</a><a href="#">削除</a></td>
-			</tr>
-		</table>
+		<h2>予約変更</h2>
+		<div class="booking">
+			<img alt="" src="image/uprp_01.jpg">
+			<span>2020/2/2生まれ</span><span>♀</span><span>￥10000</span>
+			<div>おとなしい子です。</div>
+			<form class="input" action="login" method="post">
+				この子の予約日時を
+				<label><input type="datetime-local" min="2020-06-03T00:00" /></label>
+				に<input class="btn2" type="submit" value="変更">します
+			</form>
+		</div>
 	</main>
 
 </body>
-</html>
