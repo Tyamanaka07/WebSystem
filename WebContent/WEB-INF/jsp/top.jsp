@@ -22,9 +22,9 @@
 		<nav>
 			<ul>
 				<li><a href="topDiagram">トップページ</a></li>
-				<li><a href="petlist?tid=0">ウーパールーパー</a></li>
-				<li><a href="petlist?tid=1">ワンちゃん</a></li>
-				<li><a href="petlist?tid=2">ネコちゃん</a></li>
+				<li><a href="petlist?tid=1">ウーパールーパー</a></li>
+				<li><a href="petlist?tid=2">ワンちゃん</a></li>
+				<li><a href="petlist?tid=3">ネコちゃん</a></li>
 			</ul>
 		</nav>
 	</header>
