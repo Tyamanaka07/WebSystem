@@ -18,7 +18,7 @@ topPage --> petList
 topPage --> login
 login --> login : リンク\nuid\nuname\npass
 petList --> petAdd : リンク \n
-petAdd --> petAdd : リンク \npid \ntid \ntname \nbirthDate \naSex \nprice
+petAdd --> petAdd : リンク \npid \ntid \ntname \nbirthDate \nsex \nprice
 petList --> booking : リンク \npid
 booking --> booking : リンク \nuid \nbookingDate \ntelNum
 petList --> bookingList : リンク \nuid \npid
