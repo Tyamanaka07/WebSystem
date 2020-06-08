@@ -4,7 +4,7 @@ left to right direction
 package Model{
 	class Pet{
 		-pid:int
-		-tid:int
+		-type:Type
 		-birthDate:Date
 		-sex:String
 		-price:int
@@ -24,12 +24,12 @@ package Model{
 
 	class Booking{
 		-bid:int
-		-pid:int
-		-tid:int
 		-uid:int
 		-tid:int
 		-bookingDate:Timestamp
 		-telNum:String
+		-pet:Pet
+		-type:Type
 	}
 
 	class PetDAO{

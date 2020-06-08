@@ -9,6 +9,10 @@ public class Type {
 	private int tid;
 	private String tname;
 
+	public Type() {
+
+	}
+
 
 	/**
 	 * ペットの種類IDのgetter

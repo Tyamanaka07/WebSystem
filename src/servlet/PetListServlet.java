@@ -12,11 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import Model.Pet;
 import Model.PetDAO;
+import Model.Type;
+import Model.TypeDAO;
 
 /**
  * Servlet implementation class PetListServlet
  */
-@WebServlet("/")
+@WebServlet("/petlist")
 public class PetListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,14 +36,22 @@ public class PetListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		String tidStr = request.getParameter("tid");
-		int tid = Integer.parseInt(tidStr);
+		//String tidStr = request.getParameter("tid");
+		//int tid = Integer.parseInt(tidStr);
+
+		int tid = 1;
 
 		PetDAO pdao = new PetDAO();
+		TypeDAO tdao = new TypeDAO();
+
 		ArrayList<Pet> plist = new ArrayList<Pet>();
+		Type t = new Type();
 
 		plist = pdao.findByTid(tid);
+		t = tdao.findByTid(tid);
+
 		request.setAttribute("plist", plist);
+		request.setAttribute("type", t);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/petlist.jsp");
 		dispatcher.forward(request, response);

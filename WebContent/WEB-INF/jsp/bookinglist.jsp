@@ -15,16 +15,27 @@
 		<div class="top">
 			<ul>
 				<li><a href="bookinglist.jsp">予約一覧</a></li>
+<<<<<<< HEAD
 				<li><a href="login.html">ログアウト</a></li>
+=======
+				<li><a href="login.jsp">ログアウト</a></li>
+>>>>>>> branch 'master' of https://github.com/Tyamanaka07/WebSystem.git
 			</ul>
-			<h1><a href="top.html">Nakagawa's</a></h1>
+			<h1><a href="top.jsp">Nakagawa's</a></h1>
 		</div>
 		<nav>
 			<ul>
+<<<<<<< HEAD
 				<li><a href="top.html">トップページ</a></li>
 				<li><a href="plist.jsp?tid=1">ウーパールーパー</a></li>
 				<li><a href="plist.jsp?tid=2">ワンちゃん</a></li>
 				<li><a href="plist.jsp?tid=3">ネコちゃん</a></li>
+=======
+				<li><a href="top.jsp">トップページ</a></li>
+				<li><a href="index.jsp">ウーパールーパー</a></li>
+				<li><a href="index.jsp">ワンちゃん</a></li>
+				<li><a href="index.jsp">ネコちゃん</a></li>
+>>>>>>> branch 'master' of https://github.com/Tyamanaka07/WebSystem.git
 			</ul>
 		</nav>
 	</header>
@@ -38,10 +49,12 @@
 			<c:forEach var="booking" items="${blist}">
 			<tr>
 			<td><img alt="" src="image/uprp_01.jpg"></td>
+
 			<td>${booking.type.tname}</td>
 			<td>${booking.pet.birthDate}</td>
 			<td>${booking.pet.sex}</td>
 			<td>${booking.bookingDate}</td>
+
 			<td><a href="#">変更</a><a href="#">削除</a></td>
 			</tr>
 			</c:forEach>
