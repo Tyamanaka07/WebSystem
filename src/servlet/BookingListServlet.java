@@ -54,8 +54,14 @@ public class BookingListServlet extends HttpServlet {
 
 		request.setAttribute("blist", blist);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglist.jsp");
-		dispatcher.forward(request, response);
+		if(u.getUid()==1) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglist.jsp");
+			dispatcher.forward(request, response);
+		}else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglistAdmin.jsp");
+			dispatcher.forward(request, response);
+		}
+
 
 	}
 
