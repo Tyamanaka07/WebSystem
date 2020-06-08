@@ -1,0 +1,19 @@
+@startuml
+title ペット追加
+actor ユーザー
+participant petList
+participant PetInsertServlet
+database PetDAO
+autonumber "#."
+
+ユーザー->PetInsertServlet:追加ボタン
+PetInsertServlet->petInsert.jsp : フォワード
+petInsert.jsp->ユーザー:入力フォームを表示
+ユーザー->petInsert.jsp : 入力
+petInsert.jsp->PetInsertServlet : POST()
+PetInsertServlet->PetDAO : 生成()
+PetInsertServlet->Pet : 生成()
+PetInsertServlet->PetDAO : insert()
+PetInsertServlet->petList : リダイレクト
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+title ペット削除
+actor ユーザー
+participant petList
+participant PetDeleteServlet
+database PetDAO
+participant petDeleteCheck.jsp
+autonumber "#."
+
+ユーザー->PetDeleteServlet : 削除ボタン
+PetDeleteServlet->PetDAO : 生成()
+PetDeleteServlet->PetDAO : findByPid()
+PetDeleteServlet->petDeleteCheck.jsp : フォワード
+petDeleteCheck.jsp->ユーザー : 確認
+ユーザー->petDeleteCheck.jsp : 確認ボタン
+petDeleteCheck.jsp->PetDeleteServlet : POST()
+PetDeleteServlet->PetDAO : 生成()
+PetDeleteServlet->PetDAO : delete()
+PetDeleteServlet->petList : リダイレクト
+
+@enduml
