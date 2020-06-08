@@ -1,9 +1,11 @@
-<!-- 中川伶丞 -->
+<!-- @author 中川伶丞 -->
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="Model.User" %>
+<% User user = (User) session.getAttribute("user"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +43,6 @@
 			<c:forEach var="booking" items="${blist}">
 			<tr>
 			<td><img alt="" src="image/uprp_01.jpg"></td>
-
 			<td>${booking.type.tname}</td>
 			<td>${booking.pet.birthDate}</td>
 			<td>${booking.pet.sex}</td>
