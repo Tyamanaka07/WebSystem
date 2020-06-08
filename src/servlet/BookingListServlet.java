@@ -13,8 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import Model.Booking;
 import Model.BookingDAO;
-import Model.Pet;
-import Model.PetDAO;
 import Model.User;
 
 /**
@@ -49,13 +47,7 @@ public class BookingListServlet extends HttpServlet {
 		BookingDAO bdao = new BookingDAO();
 		ArrayList<Booking> blist = bdao.findAll();
 
-		for 
-		
-		
-
 		request.setAttribute("blist", blist);
-
-
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglist.jsp");
 		dispatcher.forward(request, response);
