@@ -22,26 +22,25 @@ public class UserDAO {
 	 * ユーザー名とパスワードによるユーザーのログイン
 	 * @return ユーザー
 	 */
-	public User login(String uname, String pass) {
+	public User login(String uname, String password) {
 		User u = null;
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SElECT * FROM user WHERE uname = ? and pass = ?";
+			String sql = "SElECT * FROM user WHERE uname = ? and password = ?";
 
 
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setString(1, uname);
-			stmt.setString(2, pass);
+			stmt.setString(2, password);
 
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
 				int uid = rs.getInt("uid");
-				String mail = rs.getString("mail");
 
-				u = new User(uid, uname, pass, mail);
+				u = new User(uid, uname, password);
 
 			}
 			stmt.close();
