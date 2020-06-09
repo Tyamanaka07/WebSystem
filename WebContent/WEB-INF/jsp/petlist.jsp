@@ -39,9 +39,9 @@
 
 	<main>
 		<div class="pet_box">
-			<c:forEach var = "plist" items = "${plist}">
-				<section>
-					<img alt="" src="${plist.f_path}">	<!-- 分からないので保留 -->
+			<section>
+				<c:forEach var = "plist" items = "${plist}">
+					<img alt="" src="${plist.f_path}">
 					<span>${plist.birthDate}</span><span>${plist.sex}</span><span>￥${plist.price}</span>
 					<div class="txt">${plist.description}</div>
 					<div class="btn">
@@ -54,8 +54,8 @@
 						<a href="login">予約</a>
 					</c:if>
 					</div>
-				</section>
-			</c:forEach>
+				</c:forEach>
+			</section>
 		</div>
 		<!--<div class="insert"><a href="petinsert.html">ペット追加</a></div> -->
 	</main>
