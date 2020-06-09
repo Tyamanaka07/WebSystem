@@ -24,6 +24,7 @@ package Model{
 
 	class Booking{
 		-bid:int
+		-pid:int
 		-tid:int
 		-bookingDate:Timestamp
 		-telNum:String
@@ -56,6 +57,7 @@ package Model{
 	class BookingDAO{
 		+findAll():ArrayList<Booking>
 		+findByBid(int bid):Booking
+		+findByUid(int uid):ArrayList<Booking>
 		+insert(Booking b)
 		+update(Booking b)
 		+delete(int bid)
@@ -74,6 +76,11 @@ package Servlet{
 	}
 
 	class LoginServlet{
+		+doGet()
+		+doPost()
+	}
+
+	class LogoutServlet{
 		+doGet()
 		+doPost()
 	}
