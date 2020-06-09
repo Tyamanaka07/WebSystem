@@ -20,7 +20,7 @@
 		<div class="top">
 			<ul>
 				<c:if test="${user.uid!=null}">
-				<li><a href="bookinglist.jsp">予約一覧</a></li>
+				<li><a href="bookinglist">予約一覧</a></li>
 				<li><a href="logout">ログアウト</a></li>
 			</c:if>
 			<c:if test="${user.uid==null}">
