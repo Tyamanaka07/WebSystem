@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
- * @author Nakagawa
+ *ペットのDAO
+ * @author 中川伶丞
  */
 public class PetDAO {
 	static final String URL =  "jdbc:mysql://localhost/pet_sysdb?useSSL=false";

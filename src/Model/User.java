@@ -1,5 +1,11 @@
 package Model;
 
+/**
+ * ユーザーの構成
+ * @author 中川伶丞
+ *
+ */
+
 public class User {
 	/**
 	 * ユーザーID
