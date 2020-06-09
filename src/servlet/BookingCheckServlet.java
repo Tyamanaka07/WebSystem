@@ -48,12 +48,18 @@ public class BookingCheckServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String pidStr = request.getParameter("pid");
+		String uidStr = request.getParameter("uid");
 		int pid = Integer.parseInt(pidStr);
+		int uid = Integer.parseInt(uidStr);
 
-		PetDAO dao = new PetDAO();
-		Pet p = dao.findByPid(pid);
+		PetDAO pdao = new PetDAO();
+		UserDAO udao = new UserDAO();
+
+		Pet p = pdao.findByPid(pid);
+		User u = udao.findByUid(uid);
 
 		request.setAttribute("pet", p);
+		request.setAttribute("user", u);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/booking.jsp");
 		dispatcher.forward(request, response);
