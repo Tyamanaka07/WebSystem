@@ -102,6 +102,41 @@ public class BookingDAO {
 		return b;
 	}
 
+	public Booking findByUid(int uid) {
+		Booking b = null;
+
+		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
+
+			String sql = "SELECT * FROM m_booking WHERE uid = ?";
+
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setInt(1, uid);
+
+			ResultSet rs = stmt.executeQuery();
+
+			if(rs.next()) {
+				int bid = rs.getInt("bid");
+				int pid = rs.getInt("pid");
+				Date birthDate = rs.getDate("birthDate");
+				String sex = rs.getString("sex");
+				String tname = rs.getString("tname");
+				String uname = rs.getString("uname");
+				Timestamp bookingDate = rs.getTimestamp("bookingDate");
+				String telNum = rs.getString("telNum");
+				String f_path = rs.getString("f_path");
+
+				b = new Booking(bid, pid, birthDate, sex, tname, uid, uname, bookingDate, telNum, f_path);
+
+
+			}
+			stmt.close();
+
+		} catch (SQLException e) {
+			System.out.println("findByUidエラー：" + e.getMessage());
+		}
+		return b;
+	}
+
 	/**
 	 * 予約情報の追加
 	 * @param b 予約クラス

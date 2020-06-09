@@ -50,18 +50,15 @@ public class BookingListServlet extends HttpServlet {
 		}
 
 		BookingDAO bdao = new BookingDAO();
-		ArrayList<Booking> blist = bdao.findAll();
-		
-		for(Booking b:blist) {
-			b.getUser();
-		}
-
-		request.setAttribute("blist", blist);
 
 		if(u.getUid()!=1) {
+			Booking b = bdao.findByUid(u.getUid());
+			request.setAttribute("blist", b);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglist.jsp");
 			dispatcher.forward(request, response);
 		}else {
+			ArrayList<Booking> blist = bdao.findAll();
+			request.setAttribute("blist", blist);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglistAdmin.jsp");
 			dispatcher.forward(request, response);
 		}
