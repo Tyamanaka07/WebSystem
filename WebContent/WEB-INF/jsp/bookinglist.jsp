@@ -26,7 +26,7 @@
 		</div>
 		<nav>
 			<ul>
-				<li><a href="top.html">トップページ</a></li>
+				<li><a href="topDiagram">トップページ</a></li>
 				<li><a href="plist.jsp?tid=1">ウーパールーパー</a></li>
 				<li><a href="plist.jsp?tid=2">ワンちゃん</a></li>
 				<li><a href="plist.jsp?tid=3">ネコちゃん</a></li>

@@ -18,7 +18,7 @@
 				<li><a href="bookinglist.jsp">予約一覧</a></li>
 				<li><a href="login.jsp">ログアウト</a></li>
 			</c:if>
-			<c:if test="${user,uid=null}">
+			<c:if test="${user,uid==null}">
 				<li><a href="login.jsp">ログイン</a></li>
 			</c:if>
 			</ul>
