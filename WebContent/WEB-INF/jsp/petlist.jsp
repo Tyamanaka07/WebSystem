@@ -48,7 +48,7 @@
 						<!-- <a href="#">編集</a>
 						<a href="#">削除</a> -->
 					<c:if test="${user.uid!=null}">
-						<a href="bookingCheck?pid=${plist.pid}?uid=${user.uid}">予約</a>
+						<a href="bookingCheck?pid=${plist.pid}&uid=${user.uid}">予約</a>
 					</c:if>
 					<c:if test="${user.uid==null}">
 						<a href="login">予約</a>
