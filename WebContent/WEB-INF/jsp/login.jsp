@@ -24,7 +24,7 @@
 	</header>
 
 	<main class="sub">
-		<form autocomplete="off" class="logininput" action="login" method="post">
+		<form class="logininput" action="login" method="post">
 			ユーザー名：<input type="text" name="name">　
 			パスワード：<input type="password" name="pass"><br>
 			<input class="loginbtn" type="submit" value="ログイン">
