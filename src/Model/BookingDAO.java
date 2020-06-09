@@ -1,6 +1,7 @@
 package Model;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,6 +38,8 @@ public class BookingDAO {
 			while (rs.next()) {
 				int bid = rs.getInt("bid");
 				int pid = rs.getInt("pid");
+				Date birthDate = rs.getDate("birthDate");
+				String sex = rs.getString("sex");
 				String tname = rs.getString("tname");
 				int uid = rs.getInt("uid");
 				String uname = rs.getString("uname");
@@ -44,7 +47,7 @@ public class BookingDAO {
 				String telNum = rs.getString("telNum");
 				String f_path = rs.getString("f_path");
 
-				Booking b = new Booking(bid, pid, tname, uid, uname, bookingDate, telNum, f_path);
+				Booking b = new Booking(bid, pid, birthDate, sex, tname, uid, uname, bookingDate, telNum, f_path);
 				list.add(b);
 
 			}
@@ -78,6 +81,8 @@ public class BookingDAO {
 			if (rs.next()) {
 
 				int pid = rs.getInt("pid");
+				Date birthDate = rs.getDate("birthDate");
+				String sex = rs.getString("sex");
 				String tname = rs.getString("tname");
 				int uid = rs.getInt("uid");
 				String uname = rs.getString("uname");
@@ -85,7 +90,7 @@ public class BookingDAO {
 				String telNum = rs.getString("telNum");
 				String f_path = rs.getString("f_path");
 
-				b =  new Booking(bid, pid, tname, uid, uname, bookingDate, telNum, f_path);
+				b =  new Booking(bid, pid, birthDate, sex, tname, uid, uname, bookingDate, telNum, f_path);
 
 			}
 			rs.close();
@@ -104,16 +109,18 @@ public class BookingDAO {
 	public void insert(Booking b) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "INSERT into m_booking (pid, tname, uid, uname,bookingDate, telNum, f_path) values(?,?,?,?,?,?,?)";
+			String sql = "INSERT into m_booking (pid, birthDate, sex, tname, uid, uname,bookingDate, telNum, f_path) values(?,?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setInt(1, b.getPet().getPid());
-			stmt.setString(2, b.getType().getTname());
-			stmt.setInt(3, b.getUser().getUid());
-			stmt.setString(4, b.getUser().getUname());
-			stmt.setTimestamp(5, b.getBookingDate());
-			stmt.setString(6, b.getTelNum());
-			stmt.setString(7, b.getPet().getF_path());
+			stmt.setDate(2, b.getPet().getBirthDate());
+			stmt.setString(3, b.getPet().getSex());
+			stmt.setString(4, b.getType().getTname());
+			stmt.setInt(5, b.getUser().getUid());
+			stmt.setString(6, b.getUser().getUname());
+			stmt.setTimestamp(7, b.getBookingDate());
+			stmt.setString(8, b.getTelNum());
+			stmt.setString(9, b.getPet().getF_path());
 
 			stmt.executeUpdate();
 			stmt.close();

@@ -1,5 +1,6 @@
 package Model;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
@@ -18,6 +19,17 @@ public class Booking {
 	 * ペットID
 	 */
 	private int pid;
+
+	/**
+	 * 生年月日
+	 */
+	private Date birthDate;
+
+	/**
+	 * 性別
+	 */
+	private String sex;
+
 
 	/**
 	 * ペットの種類
@@ -97,6 +109,37 @@ public class Booking {
 		this.pid = pid;
 	}
 
+	/**
+	 * 生年月日のgetter
+	 * @return 生年月日
+	 */
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	/**
+	 * 生年月日のsetter
+	 * @param birthDate 生年月日
+	 */
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	/**
+	 * 性別のgetter
+	 * @return 性別
+	 */
+	public String getSex() {
+		return sex;
+	}
+
+	/**
+	 * 性別のsetter
+	 * @param sex 性別
+	 */
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 	/**
 	 * 種類のgetter
 	 * @return 種類
@@ -244,10 +287,12 @@ public class Booking {
 	 * @param bookingDate 予約した日時
 	 * @param telNum ユーザーの電話番号
 	 */
-	public Booking(int bid, int pid, String tname, int uid, String uname, Timestamp bookingDate, String telNum, String f_path) {
+	public Booking(int bid, int pid, Date birthDate, String sex, String tname, int uid, String uname, Timestamp bookingDate, String telNum, String f_path) {
 		super();
 		this.bid = bid;
 		this.pid = pid;
+		this.birthDate = birthDate;
+		this.sex = sex;
 		this.tname = tname;
 		this.uid = uid;
 		this.uname = uname;
