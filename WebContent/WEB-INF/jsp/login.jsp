@@ -18,7 +18,7 @@
 				<li><a href="#">　</a></li>
 				<li><a href="#">　</a></li>
 			</ul>
-			<h1><a href="top.html">Nakagawa's</a></h1>
+			<h1><a href="topDiagram">Nakagawa's</a></h1>
 		</div>
 	</header>
 
