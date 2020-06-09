@@ -46,7 +46,9 @@
 			<div>${ pet.description }</div><br>
 			<form class="input" action="bookingCheck" method="post">
 				日時：
-				<label><input type="datetime-local" min="2020-06-03T00:00" /></label>
+				<label><input type="datetime-local" name="bookingDateStr" min="2020-06-03T00:00" /></label>
+				<input type="hidden" name="pid" value=${ pet.pid }>
+				<input type="hidden" name="tid" value=${ pet.tid }>
 				　　電話番号：<input type="text" name="telNum"><br>
 				この子を<input class="btn2" type="submit" value="予約">します
 			</form>

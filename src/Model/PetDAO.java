@@ -59,8 +59,6 @@ public class PetDAO {
 	 * データベース内のデータを取得する
 	 * @return ArrayList<Pet>型の変数を返す
 	 */
-
-
 	public ArrayList<Pet> findByTid(int tid) {
 		ArrayList<Pet> plistTid = new ArrayList<Pet>();
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
