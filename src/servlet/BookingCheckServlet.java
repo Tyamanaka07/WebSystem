@@ -17,6 +17,8 @@ import Model.Booking;
 import Model.BookingDAO;
 import Model.Pet;
 import Model.PetDAO;
+import Model.Type;
+import Model.TypeDAO;
 import Model.User;
 
 
@@ -65,15 +67,26 @@ public class BookingCheckServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		User u = (User) session.getAttribute("user");
 
+		String pidStr =  request.getParameter("pid");
+		String tidStr =  request.getParameter("tid");
 		String bookingDateStr = request.getParameter("bookingDateStr");
 		String telNum = request.getParameter("telNum");
+
+		int pid = Integer.parseInt(pidStr);
+		int tid = Integer.parseInt(tidStr);
+
+		PetDAO pdao = new PetDAO();
+		TypeDAO tdao = new TypeDAO();
+
+		Pet pet = pdao.findByPid(pid);
+		Type type = tdao.findByTid(tid);
 
 
 		try {
 			Timestamp bookingDate = new Timestamp(new SimpleDateFormat("yyyy/MM/dd").parse(request.getParameter(bookingDateStr)).getTime());
 
 			BookingDAO dao = new BookingDAO();
-			dao.insert(new Booking(0, u.getUid(), bookingDate, telNum));
+			dao.insert(new Booking(0, u.getUid(), bookingDate, telNum, pet, type));
 
 
 		} catch (ParseException e) {
