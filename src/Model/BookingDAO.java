@@ -36,11 +36,10 @@ public class BookingDAO {
 
 			while (rs.next()) {
 				int bid = rs.getInt("bid");
-				int uid = rs.getInt("uid");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
 
-				Booking b = new Booking(bid, uid, bookingDate, telNum);
+				Booking b = new Booking(bid, bookingDate, telNum);
 				list.add(b);
 
 			}
@@ -53,39 +52,7 @@ public class BookingDAO {
 		return list;
 	}
 
-	/**
-	 * uidによる予約の検索
-	 * @return 予約情報のリスト
-	 */
-	public ArrayList<Booking> findByUid(int uid) {
-		ArrayList<Booking> list = new ArrayList<>();
 
-		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
-
-			String sql = "SELECT * FROM m_booking WHERE uid = ?";
-
-			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setInt(1, uid);
-
-			ResultSet rs = stmt.executeQuery();
-
-			while (rs.next()) {
-				int bid = rs.getInt("bid");
-				Timestamp bookingDate = rs.getTimestamp("bookingDate");
-				String telNum = rs.getString("telNum");
-
-				Booking b = new Booking(bid, uid, bookingDate, telNum);
-
-				list.add(b);
-			}
-			rs.close();
-			stmt.close();
-
-		} catch (SQLException e) {
-			System.out.println("findAllエラー：" + e.getMessage());
-		}
-		return list;
-	}
 
 	/**
 	 * 予約IDによる予約の検索
@@ -105,11 +72,10 @@ public class BookingDAO {
 
 			if (rs.next()) {
 
-				int uid = rs.getInt("uid");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
 
-				b = new Booking(bid, uid, bookingDate, telNum);
+				b = new Booking(bid, bookingDate, telNum);
 
 			}
 			rs.close();
@@ -128,13 +94,16 @@ public class BookingDAO {
 	public void insert(Booking b) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "INSERT into m_booking (pid, uid, bookingDate, telNum) values(?,?,?,?)";
+			String sql = "INSERT into m_booking (pid, tname, uid, uname,bookingDate, telNum, f_path) values(?,?,?,?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setInt(1, b.getPet().getPid());
-			stmt.setInt(2, b.getUid());
-			stmt.setTimestamp(3, b.getBookingDate());
-			stmt.setString(4, b.getTelNum());
+			stmt.setString(2, b.getType().getTname());
+			stmt.setInt(3, b.getUser().getUid());
+			stmt.setString(4, b.getUser().getUname());
+			stmt.setTimestamp(5, b.getBookingDate());
+			stmt.setString(6, b.getTelNum());
+			stmt.setString(7, b.getPet().getF_path());
 
 			stmt.executeUpdate();
 			stmt.close();

@@ -15,11 +15,6 @@ public class Booking {
 	private int bid;
 
 	/**
-	 * ユーザーID
-	 */
-	private int uid;
-
-	/**
 	 * 予約した日時
 	 */
 	private Timestamp bookingDate;
@@ -39,6 +34,11 @@ public class Booking {
 	 */
 	private Type type;
 
+	/**
+	 * 予約したペットのユーザー
+	 */
+	private User user;
+
 
 	/**
 	 * 予約IDのgetter
@@ -54,22 +54,6 @@ public class Booking {
 	 */
 	public void setBid(int bid) {
 		this.bid = bid;
-	}
-
-	/**
-	 * ユーザーIDのgetter
-	 * @return ユーザーID
-	 */
-	public int getUid() {
-		return uid;
-	}
-
-	/**
-	 * ユーザーIDのsetter
-	 * @param uid ユーザーID
-	 */
-	public void setUid(int uid) {
-		this.uid = uid;
 	}
 
 	/**
@@ -136,18 +120,30 @@ public class Booking {
 		this.type = type;
 	}
 
+	/**
+	 * ユーザーのgetter
+	 * @return ユーザー
+	 */
+	public User getUser() {
+		return user;
+	}
 
+	/**
+	 * ユーザーIDのsetter
+	 * @param uid ユーザーID
+	 */
+	public void setUser(User user) {
+		this.user = user;
+	}
 	/**
 	 *コンストラクター
 	 * @param bid 予約ID
-	 * @param uid ユーザーID
 	 * @param bookingDate 予約した日時
 	 * @param telNum ユーザーの電話番号
 	 */
-	public Booking(int bid, int uid,  Timestamp bookingDate, String telNum) {
+	public Booking(int bid, Timestamp bookingDate, String telNum) {
 		super();
 		this.bid = bid;
-		this.uid = uid;
 		this.bookingDate = bookingDate;
 		this.telNum = telNum;
 	}
@@ -155,20 +151,20 @@ public class Booking {
 	/**
 	 *コンストラクター
 	 * @param bid 予約ID
-	 * @param uid ユーザーID
 	 * @param bookingDate 予約した日時
 	 * @param telNum ユーザーの電話番号
-	 * @param pet 予約したペット
-	 * @param type 予約したペットの種類
+	 * @param pet 予約されたペット
+	 * @param type 予約されたペットの種類
+	 * @param user 予約したユーザー
 	 */
-	public Booking(int bid, int uid,  Timestamp bookingDate, String telNum, Pet pet, Type type) {
+	public Booking(int bid, Timestamp bookingDate, String telNum, Pet pet, Type type, User user) {
 		super();
 		this.bid = bid;
-		this.uid = uid;
 		this.bookingDate = bookingDate;
 		this.telNum = telNum;
 		this.pet = pet;
 		this.type = type;
+		this.user = user;
 	}
 
 

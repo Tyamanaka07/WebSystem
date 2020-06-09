@@ -41,14 +41,15 @@
 	<main class="mainsub">
 		<h2>新規予約</h2>
 		<div class="booking">
-			<img alt="" src="image/uprp_01.jpg">
-			<span>${ pet.birthDate }</span><span>${ pet.sex }</span><span>${ pet.price }</span>
+			<img alt="" src="${pet.f_path}">
+			<span>${ pet.birthDate }</span><span>${ pet.sex }</span><span>￥${ pet.price }</span>
 			<div>${ pet.description }</div><br>
 			<form class="input" action="bookingCheck" method="post">
 				日時：
 				<label><input type="datetime-local" name="bookingDateStr"  min="2020-06-03T00:00" /></label>
 				<input type="hidden" name="pid" value=${ pet.pid }>
 				<input type="hidden" name="tid" value=${ pet.tid }>
+				<input type="hidden" name="uid" value=${ user.uid }>
 				　　電話番号：<input type="text" name="telNum"><br>
 				この子を<input class="btn2" type="submit" value="予約">します
 			</form>

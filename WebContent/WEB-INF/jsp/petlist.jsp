@@ -39,23 +39,24 @@
 
 	<main>
 		<div class="pet_box">
-			<section>
-				<c:forEach var = "plist" items = "${plist}">
-					<img alt="" src="image/uprp_01.jpg">	<!-- 分からないので保留 -->
+			<c:forEach var = "plist" items = "${plist}">
+				<section>
+					<img alt="" src="${plist.f_path}">
 					<span>${plist.birthDate}</span><span>${plist.sex}</span><span>￥${plist.price}</span>
 					<div class="txt">${plist.description}</div>
 					<div class="btn">
 						<!-- <a href="#">編集</a>
 						<a href="#">削除</a> -->
 					<c:if test="${user.uid!=null}">
-						<a href="bookingCheck?pid=${plist.pid}">予約</a>
+						<a href="bookingCheck?pid=${plist.pid}&uid=${user.uid}">予約</a>
 					</c:if>
 					<c:if test="${user.uid==null}">
 						<a href="login">予約</a>
 					</c:if>
 					</div>
-				</c:forEach>
-			</section>
+				</section>
+			</c:forEach>
+
 		</div>
 		<!--<div class="insert"><a href="petinsert.html">ペット追加</a></div> -->
 	</main>
