@@ -1,3 +1,5 @@
+<!-- 作成者 山中健裕 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -17,7 +19,7 @@
 				<li><a href="bookinglist.html">予約一覧</a></li>
 				<li><a href="login.html">ログアウト</a></li>
 			</ul>
-			<h1><a href="top.html">Nakagawa's</a></h1>
+			<h1><a href="topDiagram">Nakagawa's</a></h1>
 		</div>
 		<nav>
 			<ul>

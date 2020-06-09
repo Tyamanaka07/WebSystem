@@ -1,3 +1,5 @@
+<!-- 作成者 山中健裕 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,7 +18,7 @@
 				<li><a href="#">　</a></li>
 				<li><a href="#">　</a></li>
 			</ul>
-			<h1><a href="top.html">Nakagawa's</a></h1>
+			<h1><a href="topDiagram">Nakagawa's</a></h1>
 		</div>
 	</header>
 

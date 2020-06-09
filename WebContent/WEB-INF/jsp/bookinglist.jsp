@@ -22,11 +22,11 @@
 				<li><a href="bookinglist.jsp">予約一覧</a></li>
 				<li><a href="login.jsp">ログアウト</a></li>
 			</ul>
-			<h1><a href="top.jsp">Nakagawa's</a></h1>
+			<h1><a href="topDiagram">Nakagawa's</a></h1>
 		</div>
 		<nav>
 			<ul>
-				<li><a href="top.html">トップページ</a></li>
+				<li><a href="topDiagram">トップページ</a></li>
 				<li><a href="plist.jsp?tid=1">ウーパールーパー</a></li>
 				<li><a href="plist.jsp?tid=2">ワンちゃん</a></li>
 				<li><a href="plist.jsp?tid=3">ネコちゃん</a></li>

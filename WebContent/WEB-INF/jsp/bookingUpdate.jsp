@@ -21,9 +21,9 @@
 		<nav>
 			<ul>
 				<li><a href="topDiagram">トップページ</a></li>
-				<li><a href="index.html">ウーパールーパー</a></li>
-				<li><a href="#">ワンちゃん</a></li>
-				<li><a href="#">ネコちゃん</a></li>
+				<li><a href="petlist?tid=1">ウーパールーパー</a></li>
+				<li><a href="petlist?tid=2">ワンちゃん</a></li>
+				<li><a href="petlist?tid=3">ネコちゃん</a></li>
 			</ul>
 		</nav>
 	</header>
