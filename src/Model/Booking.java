@@ -15,6 +15,26 @@ public class Booking {
 	private int bid;
 
 	/**
+	 * ペットID
+	 */
+	private int pid;
+
+	/**
+	 * ペットの種類
+	 */
+	private String tname;
+
+	/**
+	 * ユーザーID
+	 */
+	private int uid;
+
+	/**
+	 * ユーザーの名前
+	 */
+
+	private String uname;
+	/**
 	 * 予約した日時
 	 */
 	private Timestamp bookingDate;
@@ -23,6 +43,11 @@ public class Booking {
 	 * ユーザーの電話番号
 	 */
 	private String telNum;
+
+	/**
+	 * 予約ID
+	 */
+	private String f_path;
 
 	/**
 	 * 予約したペット
@@ -57,6 +82,69 @@ public class Booking {
 	}
 
 	/**
+	 * 予約IDのgetter
+	 * @return 予約ID
+	 */
+	public int getPid() {
+		return pid;
+	}
+
+	/**
+	 * ペットIDのsetter
+	 * @param pid ペットID
+	 */
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+
+	/**
+	 * 種類のgetter
+	 * @return 種類
+	 */
+	public String getTname() {
+		return tname;
+	}
+
+	/**
+	 * 種類のsetter
+	 * @param tname 種類
+	 */
+	public void setTname(String tname) {
+		this.tname = tname;
+	}
+
+	/**
+	 * ユーザーIDのgetter
+	 * @return ユーザーID
+	 */
+	public int getUid() {
+		return uid;
+	}
+
+	/**
+	 * ユーザーIDのsetter
+	 * @param uid ユーザーID
+	 */
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+
+	/**
+	 * ユーザー名のgetter
+	 * @return ユーザー名
+	 */
+	public String getUname() {
+		return uname;
+	}
+
+	/**
+	 * ユーザー名のsetter
+	 * @param uname ユーザー名
+	 */
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+	/**
 	 * 予約した日時のgetter
 	 * @return 予約した日時
 	 */
@@ -88,6 +176,21 @@ public class Booking {
 		this.telNum = telNum;
 	}
 
+	/**
+	 * 画像のgetter
+	 * @return 画像パス
+	 */
+	public String getF_path() {
+		return f_path;
+	}
+
+	/**
+	 * 画像のsetter
+	 * @param f_path 画像パス
+	 */
+	public void setF_path(String f_path) {
+		this.f_path = f_path;
+	}
 	/**
 	 * ペットのgetter
 	 * @return ペット
@@ -141,11 +244,16 @@ public class Booking {
 	 * @param bookingDate 予約した日時
 	 * @param telNum ユーザーの電話番号
 	 */
-	public Booking(int bid, Timestamp bookingDate, String telNum) {
+	public Booking(int bid, int pid, String tname, int uid, String uname, Timestamp bookingDate, String telNum, String f_path) {
 		super();
 		this.bid = bid;
+		this.pid = pid;
+		this.tname = tname;
+		this.uid = uid;
+		this.uname = uname;
 		this.bookingDate = bookingDate;
 		this.telNum = telNum;
+		this.f_path = f_path;
 	}
 
 	/**

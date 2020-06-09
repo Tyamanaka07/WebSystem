@@ -36,10 +36,15 @@ public class BookingDAO {
 
 			while (rs.next()) {
 				int bid = rs.getInt("bid");
+				int pid = rs.getInt("pid");
+				String tname = rs.getString("tname");
+				int uid = rs.getInt("uid");
+				String uname = rs.getString("uname");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
+				String f_path = rs.getString("f_path");
 
-				Booking b = new Booking(bid, bookingDate, telNum);
+				Booking b = new Booking(bid, pid, tname, uid, uname, bookingDate, telNum, f_path);
 				list.add(b);
 
 			}
@@ -72,10 +77,15 @@ public class BookingDAO {
 
 			if (rs.next()) {
 
+				int pid = rs.getInt("pid");
+				String tname = rs.getString("tname");
+				int uid = rs.getInt("uid");
+				String uname = rs.getString("uname");
 				Timestamp bookingDate = rs.getTimestamp("bookingDate");
 				String telNum = rs.getString("telNum");
+				String f_path = rs.getString("f_path");
 
-				b = new Booking(bid, bookingDate, telNum);
+				b =  new Booking(bid, pid, tname, uid, uname, bookingDate, telNum, f_path);
 
 			}
 			rs.close();
