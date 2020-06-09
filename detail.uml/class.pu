@@ -24,12 +24,12 @@ package Model{
 
 	class Booking{
 		-bid:int
-		-uid:int
 		-tid:int
 		-bookingDate:Timestamp
 		-telNum:String
 		-pet:Pet
 		-type:Type
+		-user:User
 	}
 
 	class PetDAO{
@@ -50,11 +50,11 @@ package Model{
 
 	class UserDAO{
 		+login(String uname, String password):User
+		+findByUid(int uid):User
 	}
 
 	class BookingDAO{
 		+findAll():ArrayList<Booking>
-		+findByUid(int uid):ArrayList<Booking>
 		+findByBid(int bid):Booking
 		+insert(Booking b)
 		+update(Booking b)
