@@ -42,7 +42,7 @@
 		<h2>新規予約</h2>
 		<div class="booking">
 			<img alt="" src="${pet.f_path}">
-			<span>${ pet.birthDate }</span><span>${ pet.sex }</span><span>${ pet.price }</span>
+			<span>${ pet.birthDate }</span><span>${ pet.sex }</span><span>￥${ pet.price }</span>
 			<div>${ pet.description }</div><br>
 			<form class="input" action="bookingCheck" method="post">
 				日時：
