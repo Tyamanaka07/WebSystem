@@ -48,7 +48,7 @@
 			<c:forEach var="booking" items="${blist}">
 			<tr>
 			<td><img alt="" src="${booking.pet.f_path}"></td><td>${ booking.type.tname }</td>
-			<td>${ booking.uname }</td><td>${ booking.telNum }</td>
+			<td>${ booking.user.uname }</td><td>${ booking.telNum }</td>
 			<td>${ booking.bookingDate }<td><a href="bookingUpdate?bid=${ booking.bid }">変更</a>
 			<a href="bookingDelete?bid=${ booking.bid }">削除</a></td>
 			</tr>
