@@ -102,8 +102,8 @@ public class BookingDAO {
 		return b;
 	}
 
-	public Booking findByUid(int uid) {
-		Booking b = null;
+	public ArrayList<Booking> findByUid(int uid) {
+		ArrayList<Booking> ulist = new ArrayList<>();
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
@@ -114,7 +114,7 @@ public class BookingDAO {
 
 			ResultSet rs = stmt.executeQuery();
 
-			if(rs.next()) {
+			while (rs.next()) {
 				int bid = rs.getInt("bid");
 				int pid = rs.getInt("pid");
 				Date birthDate = rs.getDate("birthDate");
@@ -125,16 +125,17 @@ public class BookingDAO {
 				String telNum = rs.getString("telNum");
 				String f_path = rs.getString("f_path");
 
-				b = new Booking(bid, pid, birthDate, sex, tname, uid, uname, bookingDate, telNum, f_path);
-
+				Booking b = new Booking(bid, pid, birthDate, sex, tname, uid, uname, bookingDate, telNum, f_path);
+				ulist.add(b);
 
 			}
+			rs.close();
 			stmt.close();
 
 		} catch (SQLException e) {
 			System.out.println("findByUidエラー：" + e.getMessage());
 		}
-		return b;
+		return ulist;
 	}
 
 	/**
