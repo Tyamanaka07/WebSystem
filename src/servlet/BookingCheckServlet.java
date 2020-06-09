@@ -43,13 +43,15 @@ public class BookingCheckServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+
 		String pidStr = request.getParameter("pid");
 		int pid = Integer.parseInt(pidStr);
 
 		PetDAO dao = new PetDAO();
 		Pet p = dao.findByPid(pid);
 
-		request.setAttribute("pet", p);
+		p = (Pet) session.getAttribute("pet");
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/booking.jsp");
 		dispatcher.forward(request, response);
@@ -73,6 +75,7 @@ public class BookingCheckServlet extends HttpServlet {
 
 			BookingDAO dao = new BookingDAO();
 			dao.insert(new Booking(0, u.getUid(), bookingDate, telNum));
+
 
 		} catch (ParseException e) {
 			e.printStackTrace();
