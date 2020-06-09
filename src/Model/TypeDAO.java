@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 	/**
 	 * 種類のDAO
-	 * @author edu06
+	 * @author 荒木亮太
 	 *
 	 */
 public class TypeDAO {
