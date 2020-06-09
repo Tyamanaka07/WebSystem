@@ -40,7 +40,7 @@
 	</header>
 
 	<main class="mainsub">
-	<h2>${user.name}様の予約一覧</h2>
+	<h2>${user.uname}様の予約一覧</h2>
 		<table class="booking_list">
 			<tr>
 			<th></th><th>種類</th><th>生年月日</th><th>性別</th><th>予約日時</th><th></th>
