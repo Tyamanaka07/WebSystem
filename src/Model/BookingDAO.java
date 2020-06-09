@@ -94,12 +94,16 @@ public class BookingDAO {
 	public void insert(Booking b) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "INSERT into m_booking (pid, bookingDate, telNum) values(?,?,?,?)";
+			String sql = "INSERT into m_booking (pid, tname, uid, uname,bookingDate, telNum, f_path) values(?,?,?,?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setInt(1, b.getPet().getPid());
-			stmt.setTimestamp(2, b.getBookingDate());
-			stmt.setString(3, b.getTelNum());
+			stmt.setString(2, b.getType().getTname());
+			stmt.setInt(3, b.getUser().getUid());
+			stmt.setString(4, b.getUser().getUname());
+			stmt.setTimestamp(5, b.getBookingDate());
+			stmt.setString(6, b.getTelNum());
+			stmt.setString(7, b.getPet().getF_path());
 
 			stmt.executeUpdate();
 			stmt.close();

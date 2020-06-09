@@ -78,7 +78,7 @@ public class UserDAO {
 			stmt.close();
 
 		} catch (SQLException e) {
-			System.out.println("findAllエラー：" + e.getMessage());
+			System.out.println("findByUidエラー：" + e.getMessage());
 		}
 		return u;
 	}

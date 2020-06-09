@@ -51,6 +51,10 @@ public class BookingListServlet extends HttpServlet {
 
 		BookingDAO bdao = new BookingDAO();
 		ArrayList<Booking> blist = bdao.findAll();
+		
+		for(Booking b:blist) {
+			b.getUser();
+		}
 
 		request.setAttribute("blist", blist);
 

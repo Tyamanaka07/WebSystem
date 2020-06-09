@@ -48,7 +48,7 @@
 			<c:forEach var="booking" items="${blist}">
 			<tr>
 			<td><img alt="" src="${booking.f_path}"></td>
-			<td>${booking.type.tname}</td>
+			<td>${booking.tname}</td>
 			<td>${booking.pet.birthDate}</td>
 			<td>${booking.pet.sex}</td>
 			<td>${booking.bookingDate}</td>
