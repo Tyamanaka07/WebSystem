@@ -47,7 +47,12 @@
 					<div class="btn">
 						<!-- <a href="#">編集</a>
 						<a href="#">削除</a> -->
-					<a href="bookingCheck?pid=${plist.pid}">予約</a>
+					<c:if test="${user.uid!=null}">
+						<a href="bookingCheck?pid=${plist.pid}">予約</a>
+					</c:if>
+					<c:if test="${user.uid==null}">
+						<a href="login">予約</a>
+					</c:if>
 					</div>
 				</c:forEach>
 			</section>
