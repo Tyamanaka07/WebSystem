@@ -32,9 +32,9 @@
 		<nav>
 			<ul>
 				<li><a href="topDiagram">トップページ</a></li>
-				<li><a href="plist.jsp?tid=1">ウーパールーパー</a></li>
-				<li><a href="plist.jsp?tid=2">ワンちゃん</a></li>
-				<li><a href="plist.jsp?tid=3">ネコちゃん</a></li>
+				<li><a href="petlist?tid=1">ウーパールーパー</a></li>
+				<li><a href="petlist?tid=2">ワンちゃん</a></li>
+				<li><a href="petlist?tid=3">ネコちゃん</a></li>
 			</ul>
 		</nav>
 	</header>
