@@ -49,11 +49,11 @@
 			<tr>
 			<td><img alt="" src="image/uprp_01.jpg"></td>
 			<td>${booking.getType().tname}</td>
-			<td>${pet.birthDate}</td>
-			<td>${pet.sex}</td>
+			<td>${booking.getPet().birthDate}</td>
+			<td>${booking.getPet().sex}</td>
 			<td>${booking.bookingDate}</td>
 
-			<!-- <td><a href="bookingUpdate?bid=${ booking.bid }">変更</a><a href="bookingDelete?bid=${ booking.bid }">削除</a></td> -->
+			<!-- <td><a href="bookingUpdate?bid=${ booking.bid }">変更</a><a href="bookingDelete?bid=${ booking.bid }">削除</a></td>-->
 			</tr>
 			</c:forEach>
 		</table>
