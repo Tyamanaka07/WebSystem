@@ -42,14 +42,13 @@
 		<h2>新規予約</h2>
 		<div class="booking">
 			<img alt="" src="image/uprp_01.jpg">
-			<span>${ pet.birthDate }生まれ</span><span>${ pet.sex }</span><span>${ pet.price }</span>
+			<span>${ pet.birthDate }</span><span>${ pet.sex }</span><span>${ pet.price }</span>
 			<div>${ pet.description }</div><br>
 			<form class="input" action="bookingCheck" method="post">
 				日時：
 				<label><input type="datetime-local" min="2020-06-03T00:00" /></label>
 				　　電話番号：<input type="text" name="telNum"><br>
 				この子を<input class="btn2" type="submit" value="予約">します
-
 			</form>
 		</div>
 	</main>
