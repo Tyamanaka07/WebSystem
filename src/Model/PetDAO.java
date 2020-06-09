@@ -39,9 +39,10 @@ public class PetDAO {
 				String sex = rs.getString("sex");
 				int price = rs.getInt("price");
 				String description = rs.getString("description");
+				String f_path = rs.getString("f_path");
 
 
-				Pet p = new Pet(pid, tid, birthDate, sex, price, description);
+				Pet p = new Pet(pid, tid, birthDate, sex, price, description, f_path);
 				plistAll.add(p);
 			}
 
@@ -75,9 +76,10 @@ public class PetDAO {
 				String sex = rs.getString("sex");
 				int price = rs.getInt("price");
 				String description = rs.getString("description");
+				String f_path = rs.getString("f_path");
 
 
-				Pet p = new Pet(pid, tid, birthDate, sex, price, description);
+				Pet p = new Pet(pid, tid, birthDate, sex, price, description,f_path);
 				plistTid.add(p);
 			}
 
@@ -110,16 +112,17 @@ public class PetDAO {
 				String sex = rs.getString("sex");
 				int price = rs.getInt("price");
 				String description = rs.getString("description");
+				String f_path = rs.getString("f_path");
 
 
-				p = new Pet(pid, tid, birthDate, sex, price, description);
+				p = new Pet(pid, tid, birthDate, sex, price, description, f_path);
 			}
 
 			stmt.close();
 
 		}
 		catch(SQLException e) {
-			System.out.println("findBySid：" + e.getMessage());
+			System.out.println("findByPid：" + e.getMessage());
 		}
 		return p;
 	}
@@ -131,12 +134,13 @@ public class PetDAO {
 		try {
 			Connection con = DriverManager.getConnection (URL,USER,PASS);
 
-			String sql = "INSERT INTO pet_sysdb.m_pet (birthDate,sex,price,description) VALUES(?, ?, ?, ?)";
+			String sql = "INSERT INTO pet_sysdb.m_pet (birthDate,sex,price,description,f_path) VALUES(?, ?, ?, ?, ?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setDate(1,p.getBirthDate());
 			stmt.setString(2,p.getSex());
 			stmt.setInt(3,p.getPrice());
 			stmt.setString(4,p.getDescription());
+			stmt.setString(5,p.getF_path());
 
 			stmt.executeUpdate();
 
@@ -154,13 +158,14 @@ public class PetDAO {
 	public void update(Pet p) {
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
-			String sql = "UPDATE pet_sysdb.m_type SET birthDate = ? ,sex = ? ,price = ? ,description = ? WHERE pid = ?;";
+			String sql = "UPDATE pet_sysdb.m_type SET birthDate = ? ,sex = ? ,price = ? ,description = ? ,f_path = ? WHERE pid = ?;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setDate(1, p.getBirthDate());
 			stmt.setString(2, p.getSex());
 			stmt.setInt(3, p.getPrice());
 			stmt.setString(4, p.getDescription());
-			stmt.setInt(5, p.getPid());
+			stmt.setString(5, p.getF_path());
+			stmt.setInt(6, p.getPid());
 
 
 			stmt.executeUpdate();

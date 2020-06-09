@@ -39,6 +39,11 @@ public class Pet {
 	 */
 	private String description;
 
+	/**
+	 * ペットの写真
+	 */
+	private String f_path;
+
 
 	public Pet() {
 
@@ -52,7 +57,7 @@ public class Pet {
 	 * @param price ペットの値段
 	 * @param description ペットの説明
 	 */
-	public Pet(int pid, int tid,  Date birthDate, String sex, int price, String description) {
+	public Pet(int pid, int tid,  Date birthDate, String sex, int price, String description, String f_path) {
 		super();
 		this.pid = pid;
 		this.tid = tid;
@@ -60,6 +65,7 @@ public class Pet {
 		this.sex = sex;
 		this.price = price;
 		this.description = description;
+		this.f_path = f_path;
 	}
 
 
@@ -157,6 +163,21 @@ public class Pet {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	/**
+	 * ペットの写真のgetter
+	 * @return ペットの画像
+	 */
+	public String getF_path() {
+		return f_path;
+	}
+
+	/**
+	 * ペットの説明のsetter
+	 * @param description ペットの説明
+	 */
+	public void setF_path(String f_path) {
+		this.f_path = f_path;
 	}
 
 

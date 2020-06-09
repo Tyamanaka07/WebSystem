@@ -41,7 +41,7 @@
 		<div class="pet_box">
 			<section>
 				<c:forEach var = "plist" items = "${plist}">
-					<img alt="" src="image/uprp_01.jpg">	<!-- 分からないので保留 -->
+					<img alt="" src="${plist.f_path}">	<!-- 分からないので保留 -->
 					<span>${plist.birthDate}</span><span>${plist.sex}</span><span>￥${plist.price}</span>
 					<div class="txt">${plist.description}</div>
 					<div class="btn">
