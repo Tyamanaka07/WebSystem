@@ -1,3 +1,5 @@
+/* 楊 */
+
 @charset "UTF-8";
 
 body {
@@ -439,4 +441,8 @@ input[type='datetime-local']:focus,input[type='date']:focus {
 
 .upload-img-btn:hover {
 	opacity: 0.5;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
