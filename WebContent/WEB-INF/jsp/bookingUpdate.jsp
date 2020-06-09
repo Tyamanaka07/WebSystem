@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +14,13 @@
 	<header>
 		<div class="topDiagram">
 			<ul>
-				<li><a href="bookinglist">予約一覧</a></li>
-				<li><a href="login">ログアウト</a></li>
+				<c:if test="${user.uid!=null}">
+				<li><a href="bookinglist.jsp">予約一覧</a></li>
+				<li><a href="login.jsp">ログアウト</a></li>
+			</c:if>
+			<c:if test="${user.uid==null}">
+				<li><a href="login">ログイン</a></li>
+			</c:if>
 			</ul>
 			<h1><a href="topDiagram">Nakagawa's</a></h1>
 		</div>
