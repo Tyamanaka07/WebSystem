@@ -18,8 +18,8 @@
 				<li><a href="bookinglist.jsp">予約一覧</a></li>
 				<li><a href="login.jsp">ログアウト</a></li>
 			</c:if>
-			<c:if test="${user,uid==null}">
-				<li><a href="login.jsp">ログイン</a></li>
+			<c:if test="${user.uid==null}">
+				<li><a href="login">ログイン</a></li>
 			</c:if>
 			</ul>
 			<h1><a href="topDiagram">Nakagawa's</a></h1>
