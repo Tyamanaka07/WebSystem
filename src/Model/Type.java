@@ -2,7 +2,7 @@ package Model;
 
 /**
  * ペットの種類の構成
- * @author edu11
+ * @author 中川伶丞
  *
  */
 public class Type {
