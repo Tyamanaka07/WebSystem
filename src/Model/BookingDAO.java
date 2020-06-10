@@ -31,7 +31,7 @@ public class BookingDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SELECT * FROM m_booking;";
+			String sql = "SELECT * FROM m_booking ORDER BY booking ASC;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			ResultSet rs = stmt.executeQuery();
