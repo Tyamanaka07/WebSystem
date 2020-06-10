@@ -116,7 +116,7 @@ public class BookingCheckServlet extends HttpServlet {
 
 
 		}catch (Exception e) {
-			e.getMessage();
+			System.out.println("なかがわ + e.getMessage()");
 		}
 
 	}
