@@ -26,7 +26,7 @@ public class TypeDAO {
 		try (Connection con = DriverManager.getConnection (URL,USER,PASS);){
 
 
-			String sql = "SELECT * FROM m_pet;";
+			String sql = "SELECT * FROM m_type;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			ResultSet rs = stmt.executeQuery();

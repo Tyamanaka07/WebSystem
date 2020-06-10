@@ -11,7 +11,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import Model.Booking;
 import Model.BookingDAO;
@@ -49,6 +48,7 @@ public class BookingCheckServlet extends HttpServlet {
 
 		String pidStr = request.getParameter("pid");
 		String uidStr = request.getParameter("uid");
+
 		int pid = Integer.parseInt(pidStr);
 		int uid = Integer.parseInt(uidStr);
 
@@ -71,13 +71,11 @@ public class BookingCheckServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		HttpSession session = request.getSession();
-		User u = (User) session.getAttribute("user");
 
+		String bookingDateStr = request.getParameter("bookingDateStr");
 		String pidStr =  request.getParameter("pid");
 		String tidStr =  request.getParameter("tid");
 		String uidStr =  request.getParameter("uid");
-		String bookingDateStr = request.getParameter("bookingDateStr");
 		String telNum = request.getParameter("telNum");
 
 		int pid = Integer.parseInt(pidStr);
@@ -100,7 +98,8 @@ public class BookingCheckServlet extends HttpServlet {
 					(bookingDateStr).getTime());
 
 			BookingDAO dao = new BookingDAO();
-			dao.insert(new Booking(0, bookingDate, telNum, pet, type, user));
+			Booking b = new Booking(0, bookingDate, telNum, pet, type, user);
+			dao.insert(b);
 
 
 		} catch (ParseException e) {

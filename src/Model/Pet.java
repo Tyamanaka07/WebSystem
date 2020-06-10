@@ -14,10 +14,6 @@ public class Pet {
 	 */
 	private int pid;
 
-	/**
-	 * 種類ID
-	 */
-	private int tid;
 
 	/**
 	 * ペットの誕生日
@@ -44,9 +40,29 @@ public class Pet {
 	 */
 	private String f_path;
 
+	/**
+	 * 予約したペットの種類
+	 */
+	private Type type;
 
-	public Pet() {
+	/**
+	 * コンストラクター
+	 * @param pid ペットID
+	 * @param birthDate ペットの誕生日
+	 * @param sex ペットの性別
+	 * @param price ペットの値段
+	 * @param description ペットの説明
+	 * @param f_path 画像のパス
+	 */
 
+	public Pet(int pid, Date birthDate, String sex, int price, String description, String f_path) {
+		super();
+		this.pid = pid;
+		this.birthDate = birthDate;
+		this.sex = sex;
+		this.price = price;
+		this.description = description;
+		this.f_path = f_path;
 	}
 	/**
 	 * コンストラクター
@@ -56,16 +72,19 @@ public class Pet {
 	 * @param sex ペットの性別
 	 * @param price ペットの値段
 	 * @param description ペットの説明
+	 * @param f_path 画像のパス
 	 */
-	public Pet(int pid, int tid,  Date birthDate, String sex, int price, String description, String f_path) {
+	public Pet(int pid, Date birthDate, String sex, int price, String description, String f_path, Type type) {
 		super();
 		this.pid = pid;
-		this.tid = tid;
+
 		this.birthDate = birthDate;
 		this.sex = sex;
 		this.price = price;
 		this.description = description;
 		this.f_path = f_path;
+		this.type = type;
+
 	}
 
 
@@ -85,21 +104,6 @@ public class Pet {
 		this.pid = pid;
 	}
 
-	/**
-	 * 種類のgetter
-	 * @return 種類
-	 */
-	public int getTid() {
-		return tid;
-	}
-
-	/**
-	 * 種類IDのsetter
-	 * @param tid 種類ID
-	 */
-	public void setTid(int tid) {
-		this.tid = tid;
-	}
 
 	/**
 	 * ペットの誕生日のgetter
@@ -166,7 +170,7 @@ public class Pet {
 	}
 	/**
 	 * ペットの写真のgetter
-	 * @return ペットの画像
+	 * @return 	画像のパス
 	 */
 	public String getF_path() {
 		return f_path;
@@ -174,10 +178,28 @@ public class Pet {
 
 	/**
 	 * ペットの説明のsetter
-	 * @param description ペットの説明
+	 * @param f_path 画像のパス
 	 */
 	public void setF_path(String f_path) {
 		this.f_path = f_path;
+	}
+
+	/**
+	 * ペットの種類のgetter
+	 * @param ペットの種類
+	 */
+
+	public Type getType() {
+		return type;
+	}
+
+	/**
+	 * ペットの種類のsetter
+	 * @param  type ペットの種類
+	 */
+
+	public void setType(Type type) {
+		this.type = type;
 	}
 
 

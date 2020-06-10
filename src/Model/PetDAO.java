@@ -34,7 +34,6 @@ public class PetDAO {
 
 			while(rs.next()) {
 				int pid = rs.getInt("pid");
-				int tid = rs.getInt("tid");
 				Date birthDate = rs.getDate("birthDate");
 				String sex = rs.getString("sex");
 				int price = rs.getInt("price");
@@ -42,7 +41,7 @@ public class PetDAO {
 				String f_path = rs.getString("f_path");
 
 
-				Pet p = new Pet(pid, tid, birthDate, sex, price, description, f_path);
+				Pet p = new Pet(pid, birthDate, sex, price, description, f_path);
 				plistAll.add(p);
 			}
 
@@ -79,7 +78,7 @@ public class PetDAO {
 				String f_path = rs.getString("f_path");
 
 
-				Pet p = new Pet(pid, tid, birthDate, sex, price, description,f_path);
+				Pet p = new Pet(pid, birthDate, sex, price, description,f_path);
 				plistTid.add(p);
 			}
 
@@ -107,7 +106,6 @@ public class PetDAO {
 
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
-				int tid = rs.getInt("tid");
 				Date birthDate = rs.getDate("birthDate");
 				String sex = rs.getString("sex");
 				int price = rs.getInt("price");
@@ -115,7 +113,7 @@ public class PetDAO {
 				String f_path = rs.getString("f_path");
 
 
-				p = new Pet(pid, tid, birthDate, sex, price, description, f_path);
+				p = new Pet(pid, birthDate, sex, price, description, f_path);
 			}
 
 			stmt.close();

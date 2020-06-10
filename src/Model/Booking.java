@@ -244,7 +244,7 @@ public class Booking {
 
 	/**
 	 * ペットのsetter
-	 * @return ペット
+	 * @param ペット
 	 */
 	public void setPet(Pet pet) {
 		this.pet = pet;
@@ -252,7 +252,7 @@ public class Booking {
 
 	/**
 	 * ペットの種類のgetter
-	 * @return ペット
+	 * @return ペットの種類
 	 */
 	public Type getType() {
 		return type;
@@ -260,7 +260,7 @@ public class Booking {
 
 	/**
 	 * ペットの種類のsetter
-	 * @return ペットの種類
+	 * @param ペットの種類
 	 */
 	public void setType(Type type) {
 		this.type = type;
@@ -276,7 +276,7 @@ public class Booking {
 
 	/**
 	 * ユーザーIDのsetter
-	 * @param uid ユーザーID
+	 * @param  ユーザー
 	 */
 	public void setUser(User user) {
 		this.user = user;
