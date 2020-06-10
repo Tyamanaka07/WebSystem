@@ -48,7 +48,7 @@
 				日時：
 				<label><input type="datetime-local" name="bookingDateStr"  min="2020-06-03T00:00" /></label>
 				<input type="hidden" name="pid" value=${ pet.pid }>
-				<input type="hidden" name="tid" value=${ pet.getType().getTid() }>
+				<input type="hidden" name="tid" value=1>
 				<input type="hidden" name="uid" value=${ user.uid }>
 				　　電話番号：<input type="text" name="telNum"><br>
 				この子を<input class="btn2" type="submit" value="予約">します
