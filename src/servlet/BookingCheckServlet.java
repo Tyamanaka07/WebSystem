@@ -95,8 +95,9 @@ public class BookingCheckServlet extends HttpServlet {
 
 
 		try {
-			Timestamp bookingDate = new Timestamp(new SimpleDateFormat("yyyy/MM/dd/hh/mm/ss").parse
-					(request.getParameter(bookingDateStr)).getTime());
+			Timestamp bookingDate = new Timestamp
+					(new SimpleDateFormat("yyyy/MM/dd/hh/mm").parse
+					(bookingDateStr).getTime());
 
 			BookingDAO dao = new BookingDAO();
 			dao.insert(new Booking(0, bookingDate, telNum, pet, type, user));
