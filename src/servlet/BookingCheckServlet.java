@@ -104,6 +104,7 @@ public class BookingCheckServlet extends HttpServlet {
 					(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").parse
 					(bookingDateStr).getTime());
 
+
 			BookingDAO dao = new BookingDAO();
 			Booking b = new Booking(0, bookingDate, telNum, pet, type, user);
 			dao.insert(b);
