@@ -83,6 +83,8 @@ public class BookingCheckServlet extends HttpServlet {
 		String uidStr =  request.getParameter("uid");
 		String telNum = request.getParameter("telNum");
 
+		System.out.println(bookingDateStr);
+
 		int pid = Integer.parseInt(pidStr);
 		int tid = Integer.parseInt(tidStr);
 		int uid = Integer.parseInt(uidStr);
@@ -99,7 +101,7 @@ public class BookingCheckServlet extends HttpServlet {
 
 		try {
 			Timestamp bookingDate = new Timestamp
-					(new SimpleDateFormat("yyyy/MM/dd/hh/mm").parse
+					(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").parse
 					(bookingDateStr).getTime());
 
 			BookingDAO dao = new BookingDAO();
