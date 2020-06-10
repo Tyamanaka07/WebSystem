@@ -48,18 +48,23 @@ public class BookingCheckServlet extends HttpServlet {
 
 		String pidStr = request.getParameter("pid");
 		String uidStr = request.getParameter("uid");
+		String tidStr = request.getParameter("tid");
 
 		int pid = Integer.parseInt(pidStr);
 		int uid = Integer.parseInt(uidStr);
+		int tid = Integer.parseInt(tidStr);
 
 		PetDAO pdao = new PetDAO();
 		UserDAO udao = new UserDAO();
+		TypeDAO tdao = new TypeDAO();
 
 		Pet pet = pdao.findByPid(pid);
 		User user = udao.findByUid(uid);
+		Type type = tdao.findByTid(tid);
 
 		request.setAttribute("pet", pet);
 		request.setAttribute("user", user);
+		request.setAttribute("type", type);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/booking.jsp");
 		dispatcher.forward(request, response);
