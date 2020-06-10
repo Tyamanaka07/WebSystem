@@ -103,7 +103,7 @@ public class BookingCheckServlet extends HttpServlet {
 
 			Timestamp bookingDate = new Timestamp
 
-					(new SimpleDateFormat("yyyy/MM/dd/hh/mm").parse
+					(new SimpleDateFormat("yyyy-MM-dd'T'hh:mm").parse
 							(bookingDateStr).getTime());
 
 
