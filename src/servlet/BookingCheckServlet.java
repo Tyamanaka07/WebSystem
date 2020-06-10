@@ -72,6 +72,10 @@ public class BookingCheckServlet extends HttpServlet {
 		}catch(IOException ex) {
 			ex.getMessage();
 		}
+		catch(NumberFormatException e) {
+			e.getMessage();
+		}
+
 
 	}
 
