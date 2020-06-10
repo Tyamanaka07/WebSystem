@@ -108,7 +108,7 @@ public class BookingDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SELECT * FROM m_booking WHERE uid = ? ORDER BY bookingDate ASC;";
+			String sql = "SELECT * FROM m_booking WHERE uid = ?;";
 
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, uid);
