@@ -145,7 +145,7 @@ public class BookingDAO {
 	public void insert(Booking b) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "INSERT into m_booking (pid, birthDate, sex, tname, uid, uname,bookingDate, telNum, f_path) values(?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT into m_booking (pid, birthDate, sex, tname, uid, uname,bookingDate, telNum, f_path) values(?,?,?,?,?,?,?,?,?);";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setInt(1, b.getPet().getPid());
