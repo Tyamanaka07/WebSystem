@@ -1,3 +1,5 @@
+//作成者 山中健裕
+
 package servlet;
 
 import java.io.IOException;
@@ -35,27 +37,31 @@ public class PetListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		try{
+			request.setCharacterEncoding("UTF-8");
 
-		String tidStr = request.getParameter("tid");
-		int tid = Integer.parseInt(tidStr);
+			String tidStr = request.getParameter("tid");
+			int tid = Integer.parseInt(tidStr);
 
-		PetDAO pdao = new PetDAO();
-		TypeDAO tdao = new TypeDAO();
+			PetDAO pdao = new PetDAO();
+			TypeDAO tdao = new TypeDAO();
 
-		ArrayList<Pet> plist = new ArrayList<Pet>();
-		Type t = new Type();
+			ArrayList<Pet> plist = new ArrayList<Pet>();
+			Type t = new Type();
 
-		plist = pdao.findByTid(tid);
-		t = tdao.findByTid(tid);
+			plist = pdao.findByTid(tid);
+			t = tdao.findByTid(tid);
 
-		request.setAttribute("plist", plist);
-		request.setAttribute("type", t);
+			request.setAttribute("plist", plist);
+			request.setAttribute("type", t);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/petlist.jsp");
-		dispatcher.forward(request, response);
-
-
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/petlist.jsp");
+			dispatcher.forward(request, response);
+		}catch(ServletException e) {
+			e.getMessage();
+		}catch(IOException ex) {
+			ex.getMessage();
+		}
 	}
 
 	/**

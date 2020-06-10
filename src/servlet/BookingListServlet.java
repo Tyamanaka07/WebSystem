@@ -1,3 +1,5 @@
+//作成者 中川伶丞
+
 package servlet;
 
 import java.io.IOException;
@@ -15,10 +17,6 @@ import Model.Booking;
 import Model.BookingDAO;
 import Model.User;
 
-
-/**
- * @author
- */
 
 /**
  * Servlet implementation class BookingListServlet
@@ -39,28 +37,33 @@ public class BookingListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			HttpSession session = request.getSession();
+			User u = (User) session.getAttribute("user");
 
-		HttpSession session = request.getSession();
+			if ( u == null) {
+				response.sendRedirect("login");
+				return;
+			}
 
-		User u = (User) session.getAttribute("user");
+			BookingDAO bdao = new BookingDAO();
 
-		if ( u == null) {
-			response.sendRedirect("login");
-			return;
+			if(u.getUid()!=1) {
+				ArrayList<Booking> blist = bdao.findByUid(u.getUid());
+				request.setAttribute("blist", blist);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglist.jsp");
+				dispatcher.forward(request, response);
+			}else {
+				ArrayList<Booking> blist = bdao.findAll();
+				request.setAttribute("blist", blist);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglistAdmin.jsp");
+				dispatcher.forward(request, response);
+			}
+		}catch(ServletException e){
+			e.getMessage();
 		}
-
-		BookingDAO bdao = new BookingDAO();
-
-		if(u.getUid()!=1) {
-			ArrayList<Booking> blist = bdao.findByUid(u.getUid());
-			request.setAttribute("blist", blist);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglist.jsp");
-			dispatcher.forward(request, response);
-		}else {
-			ArrayList<Booking> blist = bdao.findAll();
-			request.setAttribute("blist", blist);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bookinglistAdmin.jsp");
-			dispatcher.forward(request, response);
+		catch(IOException ex) {
+			ex.getMessage();
 		}
 
 

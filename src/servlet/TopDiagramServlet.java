@@ -1,3 +1,5 @@
+//作成者 山中健裕
+
 package servlet;
 
 import java.io.IOException;
@@ -29,10 +31,17 @@ public class TopDiagramServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		try{
+			request.setCharacterEncoding("UTF-8");
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
-		dispatcher.forward(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
+			dispatcher.forward(request, response);
+
+		}catch(ServletException e) {
+			e.getMessage();
+		}catch(IOException ex) {
+			ex.getMessage();
+		}
 	}
 
 	/**

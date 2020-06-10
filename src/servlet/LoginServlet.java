@@ -1,3 +1,5 @@
+//作成者 山中健裕
+
 package servlet;
 
 import java.io.IOException;
@@ -14,7 +16,6 @@ import Model.User;
 import Model.UserDAO;
 
 /**
- * @author 山中健裕
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/login")
@@ -33,33 +34,40 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-		dispatcher.forward(request, response);
+		try {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			dispatcher.forward(request, response);
+		}catch(ServletException e) {
+			e.getMessage();
+		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		try{
+			request.setCharacterEncoding("UTF-8");
 
-		String name = request.getParameter("name");
-		String pass = request.getParameter("pass");
+			String name = request.getParameter("name");
+			String pass = request.getParameter("pass");
 
-		UserDAO udao = new UserDAO();
-		User u = udao.login(name,pass);
+			UserDAO udao = new UserDAO();
+			User u = udao.login(name,pass);
 
-		if(u != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("user",u);
-			response.sendRedirect("topDiagram");
+			if(u != null) {
+				HttpSession session = request.getSession();
+				session.setAttribute("user",u);
+				response.sendRedirect("topDiagram");
+			}
+			else {
+				HttpSession session = request.getSession();
+				session.setAttribute("error", "パスワードが違います。");
+				response.sendRedirect("login");
+			}
+		}catch(Exception e) {
+			e.getMessage();
 		}
-		else {
-			HttpSession session = request.getSession();
-			session.setAttribute("error", "パスワードが違います。");
-			response.sendRedirect("login");
-		}
+
 	}
-
 }
