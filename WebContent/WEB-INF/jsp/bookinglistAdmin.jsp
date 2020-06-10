@@ -1,4 +1,4 @@
-<!-- @author 中川伶丞 -->
+<!-- 作成者 中川伶丞 -->
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
