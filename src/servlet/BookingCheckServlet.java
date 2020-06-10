@@ -55,11 +55,11 @@ public class BookingCheckServlet extends HttpServlet {
 		PetDAO pdao = new PetDAO();
 		UserDAO udao = new UserDAO();
 
-		Pet p = pdao.findByPid(pid);
-		User u = udao.findByUid(uid);
+		Pet pet = pdao.findByPid(pid);
+		User user = udao.findByUid(uid);
 
-		request.setAttribute("pet", p);
-		request.setAttribute("user", u);
+		request.setAttribute("pet", pet);
+		request.setAttribute("user", user);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/booking.jsp");
 		dispatcher.forward(request, response);
