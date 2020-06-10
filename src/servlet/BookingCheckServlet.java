@@ -112,12 +112,10 @@ public class BookingCheckServlet extends HttpServlet {
 			Booking b = new Booking(0, bookingDate, telNum, pet, type, user);
 			dao.insert(b);
 
-			response.sendRedirect("bookinglist");
-
-
 		}catch (Exception e) {
 			System.out.println("なかがわ + e.getMessage()");
 		}
+		response.sendRedirect("bookinglist");
 
 	}
 
