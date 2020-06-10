@@ -4,10 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="Model.Pet" %>
 <%@ page import="Model.User" %>
-<% Pet p = (Pet) request.getAttribute("Pet");%>
-<% User u = (User) request.getAttribute("User");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,15 +41,15 @@
 	<main class="mainsub">
 		<h2>新規予約</h2>
 		<div class="booking">
-			<img alt="" src="<%= p.getF_path() %>">
-			<span><%= p.getBirthDate() %></span><span><%= p.getSex() %></span><span>￥<%= p.getPrice() %></span>
-			<div><%= p.getDescription() %></div><br>
+			<img alt="" src="${pet.f_path}">
+			<span>${ pet.birthDate }</span><span>${ pet.sex }</span><span>￥${ pet.price }</span>
+			<div>${ pet.description }</div><br>
 			<form class="input" action="bookingCheck" method="post">
 				日時：
 				<label><input type="datetime-local" name="bookingDateStr"  min="2020-06-03T00:00" /></label>
-				<input type="hidden" name="pid" value=<%= p.getPid() %>>
-				<input type="hidden" name="tid" value=<%= p.getType().getTid() %>>
-				<input type="hidden" name="uid" value=<%= u.getUid() %>>
+				<input type="hidden" name="pid" value=${ pet.pid }>
+				<input type="hidden" name="tid" value=${ pet.type.getTid() }>
+				<input type="hidden" name="uid" value=${ user.uid }>
 				　　電話番号：<input type="text" name="telNum"><br>
 				この子を<input class="btn2" type="submit" value="予約">します
 			</form>
