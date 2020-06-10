@@ -1,10 +1,11 @@
+//作成者 中川伶丞
+
 package Model;
 
 import java.sql.Date;
 
 /**
  * ペットの構成
- * @author 中川伶丞
  *
  */
 public class Pet {

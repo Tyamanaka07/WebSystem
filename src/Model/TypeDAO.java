@@ -1,3 +1,5 @@
+//作成者 荒木亮太
+
 package Model;
 
 import java.sql.Connection;
@@ -9,7 +11,6 @@ import java.util.ArrayList;
 
 	/**
 	 * 種類のDAO
-	 * @author 荒木亮太
 	 *
 	 */
 public class TypeDAO {

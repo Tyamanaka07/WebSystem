@@ -1,13 +1,11 @@
+//作成者 中川伶丞
+
 package Model;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 
-/**
- * 予約の構成
- * @author 中川伶丞
- *
- */
+
 public class Booking {
 
 	/**

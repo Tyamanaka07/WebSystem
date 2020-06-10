@@ -1,3 +1,5 @@
+//作成者 山中健裕
+
 package Model;
 import java.sql.Connection;
 import java.sql.Date;
@@ -9,8 +11,6 @@ import java.util.ArrayList;
 
 /**
  *ペットのDAO
- *
- * @author 山中健裕
  */
 public class PetDAO {
 	static final String URL =  "jdbc:mysql://localhost/pet_sysdb?useSSL=false";

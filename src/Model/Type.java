@@ -1,8 +1,9 @@
+//作成者 中川伶丞
+
 package Model;
 
 /**
  * ペットの種類の構成
- * @author 中川伶丞
  *
  */
 public class Type {

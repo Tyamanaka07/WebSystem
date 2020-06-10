@@ -1,3 +1,5 @@
+//作成者 中川伶丞
+
 package Model;
 
 import java.sql.Connection;
@@ -11,7 +13,6 @@ import java.util.ArrayList;
 
 /**
  * 予約のDAO
- * @author 中川伶丞
  *
  */
 public class BookingDAO {
@@ -30,7 +31,7 @@ public class BookingDAO {
 
 		try (Connection con = DriverManager.getConnection(URL, USER, PASS);) {
 
-			String sql = "SELECT * FROM m_booking";
+			String sql = "SELECT * FROM m_booking ORDER BY bookingDate desc;";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			ResultSet rs = stmt.executeQuery();
