@@ -96,13 +96,16 @@ public class BookingCheckServlet extends HttpServlet {
 			TypeDAO tdao = new TypeDAO();
 			UserDAO udao = new UserDAO();
 
+
 			Pet pet = pdao.findByPid(pid);
 			Type type = tdao.findByTid(tid);
 			User user = udao.findByUid(uid);
 
 			Timestamp bookingDate = new Timestamp
+
 					(new SimpleDateFormat("yyyy/MM/dd/hh/mm").parse
 							(bookingDateStr).getTime());
+
 
 
 			BookingDAO dao = new BookingDAO();

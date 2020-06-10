@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author 山中健裕
  * Servlet implementation class TopDiagramServlet
  */
 @WebServlet("/topDiagram")

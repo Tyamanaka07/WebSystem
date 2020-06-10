@@ -18,7 +18,6 @@ import Model.Type;
 import Model.TypeDAO;
 
 /**
- * @author 山中健裕
  * Servlet implementation class PetListServlet
  */
 @WebServlet("/petlist")

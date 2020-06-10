@@ -1,6 +1,4 @@
-/**
- *@author 中川伶丞
- */
+//作成者 中川伶丞
 
 package servlet;
 
