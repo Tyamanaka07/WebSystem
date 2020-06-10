@@ -113,7 +113,7 @@ public class BookingCheckServlet extends HttpServlet {
 			dao.insert(b);
 
 		}catch (Exception e) {
-			System.out.println("なかがわ + e.getMessage()");
+			System.out.println("なかがわ "+ e.getMessage());
 		}
 		response.sendRedirect("bookinglist");
 
