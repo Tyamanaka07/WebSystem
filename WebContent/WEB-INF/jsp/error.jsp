@@ -36,7 +36,7 @@
 
 	<main class="mainsub">
 		<h2>エラー</h2>
-		<h4>予約がありません</h4>
+		<h4>${mes}</h4>
 	</main>
 </body>
 </html>
