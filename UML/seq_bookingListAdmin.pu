@@ -1,0 +1,16 @@
+@startuml
+title 予約一覧表示（管理者用）
+actor ユーザー
+participant トップ画面
+participant 予約一覧画面
+database 予約DB
+autonumber "#"
+
+ユーザー->トップ画面:予約一覧ボタン
+トップ画面->予約一覧画面:遷移
+予約一覧画面->予約DB:検索
+予約DB->予約:生成
+予約DB-->予約一覧画面:予約一覧
+予約一覧画面-->ユーザー:表示
+
+@enduml
