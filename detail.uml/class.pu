@@ -110,6 +110,11 @@ package Servlet{
 		+doPost()
 	}
 
+	class BookingServlet{
+		+doGet()
+		+doPost
+	}
+
 	class BookingCheckServlet{
 		+doGet()
 		+doPost()
@@ -138,6 +143,8 @@ LoginServlet..>UserDAO
 BookingCheckServlet..>BookingDAO
 BookingListServlet..>BookingDAO
 BookingDeleteServlet..>BookingDAO
+BookingServlet..>BookingDAO
+LogoutServlet..>UserDAO
 
 BookingDAO..>Booking
 PetDAO..>Pet
