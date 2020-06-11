@@ -2,6 +2,7 @@
 title ペット予約
 actor ユーザー
 participant BookingCheckServlet
+participant BookingServlet
 participant Booking.jsp
 participant BookingDAO
 participant Booking
@@ -11,9 +12,15 @@ autonumber "#."
 
 ユーザー->BookingCheckServlet : 予約ボタン押下
 BookingCheckServlet->PetDAO : 生成()
+BookingCheckServlet->TypeDAO : 生成()
+BookingCheckServlet->UserDAO : 生成()
 BookingCheckServlet->PetDAO : findByPid()
-PetDAO-->BookingCheckServlet : Pet
-BookingCheckServlet->Booking.jsp : フォワード
+BookingCheckServlet->TypeDAO : findByTid()
+BookingCheckServlet->UserDAO : findByUid()
+PetDAO-->BookingServlet : Pet
+TypeDAO-->BookingServlet : Type
+UserDAO-->BookingServlet : User
+BookingServlet->Booking.jsp : フォワード
 Booking.jsp-->ユーザー : 予約フォーム
 ユーザー->Booking.jsp : 入力
 Booking.jsp-->BookingCheckServlet : POST()
