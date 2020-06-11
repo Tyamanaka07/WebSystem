@@ -23,6 +23,8 @@
 		</div>
 	</header>
 
+	<p>${mes}</p>
+
 	<main class="sub">
 		<form class="logininput" action="login" method="post">
 			ユーザー名：<input type="text" name="name">　
