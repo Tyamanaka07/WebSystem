@@ -1,0 +1,20 @@
+@startuml
+title 予約一覧表示
+actor ユーザー
+participant BookingListServlet
+participant BookingDAO
+participant bookinglistAdmin.jsp
+participant Request
+
+autonumber "#."
+
+ユーザー->BookingListServlet:GETリクエスト
+BookingListServlet->BookingDAO:生成()
+BookingListServlet->BookingDAO:findByUid()
+BookingDAO->Booking:リストを生成
+BookingDAO-->BookingListServlet:Bookingリスト
+BookingListServlet->Request:setAttribute
+BookingListServlet->bookinglistAdmin.jsp:フォワード
+bookinglistAdmin.jsp-->ユーザー:表示
+
+@enduml

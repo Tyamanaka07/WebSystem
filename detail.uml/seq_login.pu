@@ -6,7 +6,7 @@ participant LoginServlet
 participant login.jsp
 participant UserDAO
 database m_user
-participant top
+participant topDiagram
 
 autonumber "#."
 
@@ -18,9 +18,7 @@ LoginServlet->UserDAO:new UserDAO()
 LoginServlet->UserDAO:login()
 UserDAO->m_user:照合
 UserDAO-->LoginServlet:データ
-LoginServlet->top:リダイレクト
-LoginServlet->login.jsp:エラーメッセージ,フォワード
-login.jsp-->ユーザー:エラーメッセージ表示
-top-->ユーザー:表示
+LoginServlet->topDiagram:リダイレクト
+topDiagram-->ユーザー:表示
 
 @enduml

@@ -1,5 +1,5 @@
 @startuml
-title 予約一覧表示
+title 予約一覧表示（ユーザー用）
 actor ユーザー
 participant トップ画面
 participant 予約一覧画面
