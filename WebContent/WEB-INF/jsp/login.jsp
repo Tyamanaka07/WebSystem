@@ -23,9 +23,9 @@
 		</div>
 	</header>
 
-	<p>${mes}</p>
 
 	<main class="sub">
+	<p>${mes}</p>
 		<form class="logininput" action="login" method="post">
 			ユーザー名：<input type="text" name="name">　
 			パスワード：<input type="password" name="pass"><br>
