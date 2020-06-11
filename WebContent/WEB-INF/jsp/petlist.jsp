@@ -47,9 +47,9 @@
 					<div class="btn">
 						<!-- <a href="#">編集</a>
 						<a href="#">削除</a> -->
-					<form method="post" name="book" action="bookingCheck">
+					<form method="post" name="book" action="booking">
 						<c:if test="${user.uid!=null}">
-							<a href="bookingCheck?pid=${plist.pid}&uid=${user.uid}&tid=${type.tid}">予約</a>
+							<a href="booking?pid=${plist.pid}&uid=${user.uid}&tid=${type.tid}">予約</a>
 						</c:if>
 						<c:if test="${user.uid==null}">
 							<a href="login">予約</a>
