@@ -74,6 +74,7 @@ public class BookingCheckServlet extends HttpServlet {
 		}
 		catch(NumberFormatException e) {
 			e.getMessage();
+			response.sendRedirect("topDiagram");
 		}
 
 
@@ -117,7 +118,7 @@ public class BookingCheckServlet extends HttpServlet {
 			dao.insert(b);
 
 		}catch (Exception e) {
-			System.out.println("なかがわ "+ e.getMessage());
+			e.getMessage();
 		}
 		response.sendRedirect("bookinglist");
 
