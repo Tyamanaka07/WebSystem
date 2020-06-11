@@ -1,0 +1,14 @@
+@startuml
+title ログアウト
+actor ユーザー
+
+participant LogoutServlet
+participant login.jsp
+
+autonumber "#"
+
+
+ユーザー->LogoutServlet:ログアウトボタン押下
+LogoutServlet->login.jsp:リダイレクト
+login.jsp-->ユーザー:表示
+@enduml
