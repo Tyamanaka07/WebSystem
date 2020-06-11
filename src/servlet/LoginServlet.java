@@ -35,8 +35,15 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
+			HttpSession session = request.getSession();
+			String error = (String)session.getAttribute("error");
+			if(error != null) {
+				request.setAttribute("mes", error);
+				session.removeAttribute("error");
+			}
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
+
 		}catch(ServletException e) {
 			e.getMessage();
 		}
@@ -73,7 +80,7 @@ public class LoginServlet extends HttpServlet {
 			}
 			else {
 				HttpSession session = request.getSession();
-				session.setAttribute("error", "パスワードが違います。");
+				session.setAttribute("error", "ユーザー名かパスワードが違います。");
 				response.sendRedirect("login");
 			}
 		}catch(Exception e) {
