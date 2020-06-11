@@ -1,7 +1,7 @@
 @startuml
 title ログイン
 actor ユーザー
-autonumber "#"
+autonumber "#."
 
 ユーザー->トップ画面:ログインボタン
 トップ画面->ログイン画面:遷移
