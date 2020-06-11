@@ -19,7 +19,7 @@ import Model.UserDAO;
 /**
  * Servlet implementation class BookingServlet
  */
-@WebServlet("/BookingServlet")
+@WebServlet("/booking")
 public class BookingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
