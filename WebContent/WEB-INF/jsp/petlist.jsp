@@ -58,8 +58,7 @@
 					</form>
 						<c:if test="${user.uid==null}">
 					<form action="login" method="get">
-							<input type="submit"value="予約">
-							<!--  <a href="login">予約</a> -->
+							<input class="btn4" type="submit" value="予約">
 						</c:if>
 					</form>
 					</div>

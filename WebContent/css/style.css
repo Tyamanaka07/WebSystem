@@ -453,3 +453,22 @@ input[type='datetime-local']:focus,input[type='date']:focus {
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
+
+.btn4 {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	transition: opacity 0.24s ease-in;
+	font-size: medium;
+	background-color: lavender;
+	border: 0;
+	cursor: pointer;
+	border-radius: 4px;
+	font-weight: bold;
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    transition: opacity 0.24s ease-in;
+}
+
+.btn4:hover {
+	opacity: 0.5;
+}
