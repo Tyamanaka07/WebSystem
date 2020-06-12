@@ -11,6 +11,10 @@ li{
 	list-style:  none;
 }
 
+ul {
+	padding-inline-start: 0;
+}
+
 a {
 	text-decoration: none;
 	color: #a9bbdb;
@@ -27,6 +31,7 @@ a {
 	align-items: center;
 	justify-content: center;
 	background-color: #504125;
+	flex-direction: column;
 
 }
 
@@ -38,7 +43,7 @@ a {
 
 .menu li {
 	animation-name: fadein;
-    animation-duration: 2s;
+    animation-duration: 2s ;
 }
 
 .menulist {
@@ -61,6 +66,18 @@ a {
 .menulist:hover:before {
 	  transform: translateY(-50%) scaleX(1);
 	  transform-origin: top left;
+}
+
+.title {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	color: #a9bbdb;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: .1em;
+	padding: 10px;
+	margin-bottom: 40px;
+	animation-name: fadein;
+    animation-duration: 2s;
 }
 
 
