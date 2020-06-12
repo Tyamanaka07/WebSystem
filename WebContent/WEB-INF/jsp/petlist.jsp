@@ -47,12 +47,19 @@
 					<div class="btn">
 						<!-- <a href="#">編集</a>
 						<a href="#">削除</a> -->
-					<form class="input" action="booking" method="post">
+					<form  action="booking" method="post">
 						<c:if test="${user.uid!=null}">
-							<a href="booking?pid=${plist.pid}&uid=${user.uid}&tid=${type.tid}">予約</a>
+							<input type="hidden"name="pid" value="${plist.pid}">
+							<input type="hidden"name="uid" value="${user.uid}">
+							<input type="hidden"name="tid" value="${type.tid}">
+							<input type="submit"value="予約">
+							<!--  <a href="booking?pid=${plist.pid}&uid=${user.uid}&tid=${type.tid}">予約</a> -->
 						</c:if>
+					</form>
 						<c:if test="${user.uid==null}">
-							<a href="login">予約</a>
+					<form action="login" method="get">
+							<input type="submit"value="予約">
+							<!--  <a href="login">予約</a> -->
 						</c:if>
 					</form>
 					</div>

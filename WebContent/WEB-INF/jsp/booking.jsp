@@ -52,7 +52,7 @@
 				<input type="hidden" name="uid" value=${ user.uid }>
 				　　電話番号：<input type="text" name="telNum"><br>
 				この子を<input class="btn2" type="submit" value="予約">します
-				</form>
+			</form>
 		</div>
 	</main>
 
